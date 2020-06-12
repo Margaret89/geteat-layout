@@ -304,6 +304,18 @@
 	.form-site__content{width: 100%;}
 }
 
+.btn-cart-empty{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 40px 0 10px;
+
+	.btn{
+		min-width: 214px;
+		margin: 10px 12px;
+	}
+}
+
 html[dir="rtl"]{
 	.form-site{
 		&__notice img{
@@ -392,5 +404,10 @@ html[dir="rtl"]{
 		&__link a{
 			color: $color-red;
 		}
+	}
+
+	.btn-cart-empty{
+		display: block;
+		text-align: center;
 	}
 }
