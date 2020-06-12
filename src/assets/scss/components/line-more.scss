@@ -1,0 +1,73 @@
+/*-------------- line-more -----------------*/
+.line-more{
+	display: block;
+	height: 32px;
+	text-align: center;
+	position: relative;
+	margin-top: 7px;
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 1px;
+		background: #eaecee;
+		position: absolute;
+		@include top-center;
+		left: 0;
+	}
+
+	&__content{
+		display: inline-flex;
+		align-items: center;
+		min-width: 32px;
+		height: 32px;
+		border-radius: 16px;
+		background: #e0f9dc;
+		text-decoration: none;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__content::before,
+	&__content::after{
+		content: '';
+		display: inline-block;
+		width: 40px;
+		height: 2px;
+		background: #fff;
+		position: absolute;
+		@include top-center;
+	}
+
+	&__content::before{right: 100%;}
+	&__content::after{left: 100%;}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 100%;
+
+		.icon{fill: #48B26B}
+	}
+
+	&__text{
+		@include font(normal, normal, 1rem, 1.2, $color-grey);
+		margin-right: 14px;
+		margin-top: 4px;
+	}
+
+	&__content:hover{background-color: #ccefc6;}
+}
+
+html[dir="rtl"]{
+	.line-more{
+		&__text{
+			margin-right: 0;
+			margin-left: 14px;
+		}
+	}
+}

@@ -1,0 +1,92 @@
+/*-------------- counter -----------------*/
+.counter{
+	display: inline-flex;
+
+	&__min,
+	&__max{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		text-decoration: none;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__min{background: #f7dbe4;}
+	&__max{background: #e0f9dc;}
+	
+	&__min .icon{fill: $color-red;}
+	&__max .icon{fill: #48B26B;}
+
+	&__min:hover{background-color: #fbc5d6;}
+	&__max:hover{background-color: #cfe9cb;}
+
+	& input[type="text"].counter__input{
+		height: 24px;
+		width: 24px;
+		outline: none;
+		border: 1px solid #ededed;
+		border-radius: 50%;
+		font-family: $font-site;
+		@include font(normal, normal, 14px, 25px, #4a4a4a);
+		text-align: center;
+		padding: 0 5px;
+		margin: 0 6px;
+		background: #fff;
+		box-shadow: none;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__input::placeholder{
+		color: #9B9B9B;
+	}
+
+	&__input:focus{
+		border-color: $color-orange;
+		box-shadow: none;
+	}
+
+	&_big &__min,
+	&_big &__max,
+	&_big input[type="text"].counter__input{
+		width: 48px;
+		height: 48px;
+	}
+
+	&_big &__min::after,
+	&_big &__max::after{
+		width: 20px;
+		height: 20px;
+	}
+
+	&_big input[type="text"].counter__input{
+		font-size: 18px;
+		line-height: 46px;
+	}
+}
+
+@media (max-width: 767px) {
+	.counter{
+		&_big &__min,
+		&_big &__max,
+		&_big input[type="text"].counter__input{
+			width: 40px;
+			height: 40px;
+		}
+
+		&_big &__min::after,
+		&_big &__max::after{
+			width: 16px;
+			height: 16px;
+		}
+
+		&_big input[type="text"].counter__input{
+			font-size: 18px;
+			line-height: 38px;
+		}
+	}
+}

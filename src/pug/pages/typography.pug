@@ -216,19 +216,28 @@ block content
 			//- //- 		span.input-radio__text label
 
 			
-			//- //- br
-			//- //- br
-			//- //- .h2 Counter
-			//- //- .counter
-			//- //- 	.counter__min
-			//- //- 	input.counter__input(type='text', value='2')
-			//- //- 	.counter__max
-			//- //- br
-			//- //- br
-			//- //- .counter.counter_big
-			//- //- 	.counter__min
-			//- //- 	input.counter__input(type='text', value='2')
-			//- //- 	.counter__max
+			br
+			br
+			.h2 Counter
+			.counter
+				.counter__min
+					+svg('ic-minus','ic-minus', '10', '2')
+
+				input.counter__input(type='text', value='2')
+
+				.counter__max
+					+svg('ic-plus','ic-plus', '10', '10')
+			br
+			br
+			.counter.counter_big
+				.counter__min
+					+svg('ic-minus','ic-minus', '20', '3')
+
+				input.counter__input(type='text', value='2')
+
+				.counter__max
+					+svg('ic-plus','ic-plus', '20', '20')
+
 			br
 			br
 			.h2 Card radio
@@ -555,70 +564,67 @@ block content
 						+svg('ic-address','ic-address', '14', '18')
 					.type-icon__name ic-address
 
-			//- 	//- .type-icon__item
-			//- 	//- 	.type-icon__img
-			//- 	//- 		+svg('ic-delivery','ic-delivery', '30', '24')
-			//- 	//- 	.type-icon__name ic-delivery
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-delivery','ic-delivery', '30', '24')
+				//- 	.type-icon__name ic-delivery
 
-			//- 	//- .type-icon__item
-			//- 	//- 	.type-icon__img
-			//- 	//- 		+svg('ic-bank','ic-bank', '24', '24')
-			//- 	//- 	.type-icon__name ic-bank
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-bank','ic-bank', '24', '24')
+				//- 	.type-icon__name ic-bank
 
-			//- 	//- .type-icon__item
-			//- 	//- 	.type-icon__img
-			//- 	//- 		+svg('ic-star','ic-star', '12', '12')
-			//- 	//- 	.type-icon__name ic-star
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-star','ic-star', '12', '12')
+				//- 	.type-icon__name ic-star
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-package','ic-package', '28', '28')
-			//- 		.type-icon__name ic-package
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-package','ic-package', '28', '28')
+				//- 	.type-icon__name ic-package
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-direction','ic-direction', '28', '28')
-			//- 		.type-icon__name ic-direction
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-direction','ic-direction', '28', '28')
+				//- 	.type-icon__name ic-direction
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-table','ic-table', '28', '28')
-			//- 		.type-icon__name ic-table
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-table','ic-table', '28', '28')
+				//- 	.type-icon__name ic-table
 					
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-coupon','ic-coupon', '34', '21')
-			//- 		.type-icon__name ic-coupon
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-coupon','ic-coupon', '34', '21')
+				//- 	.type-icon__name ic-coupon
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-setting','ic-setting', '28', '28')
-			//- 		.type-icon__name ic-setting
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-setting','ic-setting', '28', '28')
+				//- 	.type-icon__name ic-setting
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-bell','ic-bell', '25', '28')
-			//- 		.type-icon__name ic-bell
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-bell','ic-bell', '25', '28')
+				//- 	.type-icon__name ic-bell
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-share','ic-share', '28', '28')
-			//- 		.type-icon__name ic-share
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-share','ic-share', '28', '28')
+				//- 	.type-icon__name ic-share
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-nearby-rest','ic-nearby-rest', '32', '28')
-			//- 		.type-icon__name ic-nearby-rest
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-nearby-rest','ic-nearby-rest', '32', '28')
+				//- 	.type-icon__name ic-nearby-rest
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-theme','ic-theme', '28', '28')
-			//- 		.type-icon__name ic-theme
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-theme','ic-theme', '28', '28')
+				//- 	.type-icon__name ic-theme
 
-			//- 	.type-icon__item
-			//- 		.type-icon__img
-			//- 			+svg('ic-edit','ic-edit', '16', '16')
-			//- 		.type-icon__name ic-edit
+				
 
 			//- br
 			//- br
