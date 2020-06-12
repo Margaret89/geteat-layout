@@ -527,7 +527,7 @@ block modal
 				form.pay-choose-form-wrap
 					.pay-choose-form
 						.pay-choose-form__content
-							.pay-choose-form__list
+							.pay-choose-form__list.d-none.d-md-block
 								.pay-choose-form__title Payments
 
 								.pay-list
@@ -564,7 +564,7 @@ block modal
 										.line-more__text Add
 
 
-							.pay-choose-form__fields.d-none.d-md-block
+							.pay-choose-form__fields
 								.pay-choose-form__field
 									.pay-choose-form__title Comments
 									textarea(placeholder='Dressing on the side? No pickles? Let us know here')
@@ -589,19 +589,19 @@ block modal
 								.pay-choose-form__notice Leave package by the door?
 
 						.pay-choose-form__bottom
-							.pay-choose-form__result
+							.pay-choose-form__result.d-none.d-md-block
 								span.pay-choose-form__result-title AMOUNT
 								span.pay-choose-form__result-price $ 120,99
 
 							.pay-choose-form__btn
-								button.btn.d-md-none(type='submit')
-									span Next
-									+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
+								//- button.btn.d-md-none(type='submit')
+								//- 	span Next
+								//- 	+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
 
-								button.btn.d-none.d-md-inline-block(type='submit') Finish
+								button.btn(type='submit') Finish
 								
 								.slide-dot.d-md-none
-									.slide-dot__item.active
 									.slide-dot__item
+									.slide-dot__item.active
 
 
