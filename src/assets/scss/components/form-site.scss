@@ -121,14 +121,20 @@
 	&__notice{
 		@include font(normal, normal, 1rem, 1.2, $color-red);
 		text-transform: uppercase;
+		text-align: center;
 		margin-top: 16px;
+		margin-bottom: 10px;
 	}
 
-	&__notice img{
+	&__notice a{color: $color-red;}
+
+	&__notice img,
+	&__notice .icon{
 		display: inline-block;
 		vertical-align: middle;
 		margin-right: 8px;
 		margin-top: -2px;
+		fill: $color-red;
 	}
 
 	&__field.error &__label{color: $color-red;}
@@ -186,7 +192,6 @@
 
 	&__list{
 		display: none;
-		display: block;
 		background: #faf9f9;
 		border-radius: 12px;
 		max-height: 240px;
@@ -316,9 +321,16 @@
 	}
 }
 
+.form-branch .form-site{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 html[dir="rtl"]{
 	.form-site{
-		&__notice img{
+		&__notice img,
+		&__notice .icon{
 			margin-right: 0;
 			margin-left: 8px;
 		}
@@ -379,6 +391,22 @@ html[dir="rtl"]{
 		}
 	}
 
+	.choose-delivery{
+		position: relative;
+
+		.form-site-wrap{height: auto;}
+
+		.form-site{
+			&__check{margin-top: -155px;}
+		}
+
+		.tab-form{margin-top: 0;}
+
+		.form-site{
+			&__btn_sb{display: block;}
+		}
+	}
+
 	.payment{
 		display: block;
 		&__check{display: block;}
@@ -409,5 +437,11 @@ html[dir="rtl"]{
 	.btn-cart-empty{
 		display: block;
 		text-align: center;
+	}
+
+	.form-branch{
+		height: 485px;
+
+		.select__option{max-height: 280px;}
 	}
 }

@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Login';
+	- var title = 'Get eat';
 	- var shadow = true;
 	- var modal = true;
 
@@ -513,41 +513,165 @@ block modal
 			.popup__close.d-none.d-md-inline-block
 				+svg('ic-close-grad','ic-close-grad', '32', '32')
 
-			.popup__top
+			.popup__top.popup__top_min
 				img.popup__bg-top.d-md-none(src='/assets/img/bg-mobile-head.svg', alt='')
 
-				.popup__login.d-md-none
-					img(src='/assets/img/logo-white.svg', alt='')
+				.popup__back.d-md-none
+					+svg('ic-arrow-left','ic-arrow-left', '16', '12')
+					|back
 
-				.popup__head
-					.h1 Hey there!
+				.popup__head.d-none.d-md-block
+					.h1 How you gonna GetEat?
 
 			.popup__content
-				form.form-site-wrap
-					.form-site
-						.form-site__content.form-site__content_center
-							.form-site__field
-								.form-site__input
-									input(type='text', placeholder='Phone number')
+				.choose-delivery
+					form.form-site-wrap
+						.form-site
+							.form-site__content.form-site__content_full
+								.form-site__check
+									.card-check-list
+										.card-check
+											input#delivery(name='geteat', type='radio')
 
-									// .input-auto
-									// 	input(type='text', placeholder='Phone number')
+											label.card-check__label(for='delivery')
+												.card-check__mark
+													+svg('ic-check','ic-check', '24', '18')
 
-									// 	.input-auto__list.active
-									// 		.input-auto__item Parametr 1
-									// 		.input-auto__item Parametr 2
-									// 		.input-auto__item Parametr 3
-									// 		.input-auto__item Parametr 4
-									// 		.input-auto__item Parametr 5
-						.form-site__btn
-							button.btn(type='submit')
-								span Submit
-								+svg('ic-arrow-right','ic-arrow-right', '16', '12')
-							.form-site__btn-label Not now
+												.card-check__img
+													img.card-check__img-grey(src='assets/img/delivery-grey.svg', alt='')
+													img.card-check__img-active(src='assets/img/delivery.svg', alt='')
 
-							.form-site__copyright.d-md-none
-								| Powered by 
-								img(src='/assets/img/logo.svg', alt='')
+												.card-check__text Delivery
+
+
+										.card-check
+											input#take-away(name='geteat', type='radio', checked='checked')
+
+											label.card-check__label(for='take-away')
+												.card-check__mark
+													+svg('ic-check','ic-check', '24', '18')
+
+												.card-check__img
+													img.card-check__img-grey(src='assets/img/package-grey.svg', alt='')
+													img.card-check__img-active(src='assets/img/package.svg', alt='')
+													
+												.card-check__text Take away
+
+					.tab-form
+						.tab-form__item
+							form.form-site-wrap
+								.form-site
+									.form-site__content
+										.form-site__field
+											.form-site__label Your addresses
+											.form-site__input
+												.input-auto
+													input(type='text', value='Home')
+
+													.input-auto__list
+														.input-auto__item Parametr 1
+														.input-auto__item Parametr 2
+														.input-auto__item Parametr 3
+														.input-auto__item Parametr 4
+														.input-auto__item Parametr 5
+
+										.form-site__field
+											.form-site__label City
+											.form-site__input
+												.input-auto
+													.input-auto
+														input(type='text', value="Tel Aviv")
+
+														.input-auto__list
+															.input-auto__item Parametr 1
+															.input-auto__item Parametr 2
+															.input-auto__item Parametr 3
+															.input-auto__item Parametr 4
+															.input-auto__item Parametr 5
+
+										.form-site__field
+											.form-site__label Street
+											.form-site__input
+												.input-auto
+													.input-auto
+														input(type='text', value="Fishman")
+
+														.input-auto__list
+															.input-auto__item Parametr 1
+															.input-auto__item Parametr 2
+															.input-auto__item Parametr 3
+															.input-auto__item Parametr 4
+															.input-auto__item Parametr 5
+
+										.form-site__field-wrap.form-site__field-wrap_three
+											.form-site__field
+												.form-site__label House
+												.form-site__input
+													input(type='text', placeholder='0')
+
+											.form-site__field
+												.form-site__label Floor
+												.form-site__input
+													input(type='text', placeholder='0')
+
+											.form-site__field
+												.form-site__label Apartment
+												.form-site__input
+													input(type='text', placeholder='0')
+
+									.form-site__btn.form-site__btn_sb
+										a(href="#").btn.btn_border-grad.d-none.d-md-inline-block
+											span.btn__grad-content
+												+svg('ic-alarm','ic-alarm', '16', '16')
+												span Future order
+
+										button.btn(type='submit')
+											span Order now
+											+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
+
+									.form-site__notice.d-md-none
+										a(href="#")
+											+svg('ic-alarm','ic-alarm', '16', '16')
+											| Future order
+										//
+											<div class="slide-dot" *ngIf="mobile">
+											<div class="slide-dot__item"></div>
+											<div class="slide-dot__item active"></div>
+											<div class="slide-dot__item"></div>
+											</div>
+
+
+						.tab-form__item.active
+							.form-branch
+								form.form-site-wrap
+									.form-site
+										.form-site__content
+											.form-site__field
+												.form-site__label Branch
+												.select.open
+													.select__head Choose
+													.select__option
+														.select__param
+															.select__info
+																.select__title Tel Aviv
+																.select__text Fishman 19
+															.select__img
+																img(src='/assets/img/kasher.png', alt='')
+																img(src='/assets/img/express.png', alt='')
+														.select__param
+															.select__info
+																.select__title Tel Aviv
+																.select__text Fishman 19
+										.form-site__btn
+											button.btn(type='submit')
+												span Order now
+												+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
+
+											.form-site__notice.d-md-none
+												a(href="#")
+													+svg('ic-alarm','ic-alarm', '16', '16')
+													| Future order
+
 
 
 

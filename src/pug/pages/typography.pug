@@ -227,26 +227,36 @@ block content
 			//- //- 	.counter__min
 			//- //- 	input.counter__input(type='text', value='2')
 			//- //- 	.counter__max
-			//- //- br
-			//- //- br
-			//- //- .h2 Card radio
-			//- //- .card-check-list
-			//- //- 	.card-check
-			//- //- 		input#delivery(name='geteat', type='radio', checked='checked')
-			//- //- 		label.card-check__label(for='delivery')
-			//- //- 			.card-check__mark
-			//- //- 			.card-check__img
-			//- //- 				img.card-check__img-grey(src='assets/img/delivery-grey.svg', alt='')
-			//- //- 				img.card-check__img-active(src='assets/img/delivery.svg', alt='')
-			//- //- 			.card-check__text Delivery
-			//- //- 	.card-check
-			//- //- 		input#take-away(name='geteat', type='radio')
-			//- //- 		label.card-check__label(for='take-away')
-			//- //- 			.card-check__mark
-			//- //- 			.card-check__img
-			//- //- 				img.card-check__img-grey(src='assets/img/package-grey.svg', alt='')
-			//- //- 				img.card-check__img-active(src='assets/img/package.svg', alt='')
-			//- //- 			.card-check__text Take away
+			br
+			br
+			.h2 Card radio
+			.card-check-list
+				.card-check
+					input#delivery(name='geteat', type='radio', checked='checked')
+
+					label.card-check__label(for='delivery')
+						.card-check__mark
+							+svg('ic-check','ic-check', '24', '18')
+
+						.card-check__img
+							img.card-check__img-grey(src='assets/img/delivery-grey.svg', alt='')
+							img.card-check__img-active(src='assets/img/delivery.svg', alt='')
+
+						.card-check__text Delivery
+
+
+				.card-check
+					input#take-away(name='geteat', type='radio')
+
+					label.card-check__label(for='take-away')
+						.card-check__mark
+							+svg('ic-check','ic-check', '24', '18')
+
+						.card-check__img
+							img.card-check__img-grey(src='assets/img/package-grey.svg', alt='')
+							img.card-check__img-active(src='assets/img/package.svg', alt='')
+							
+						.card-check__text Take away
 
 			br
 			br
