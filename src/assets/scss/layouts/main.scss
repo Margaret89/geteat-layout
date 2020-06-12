@@ -86,7 +86,11 @@ h6,
 	max-width: 1920px;
 	margin: 0 auto;
 
-	&.blur{filter: blur(5px);}
+	&.blur{
+		height: 100vh;
+		filter: blur(5px);
+		overflow: hidden;
+	}
 }
 
 main{
@@ -139,6 +143,7 @@ button.btn .icon{
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: -2px;
+	fill: #fff;
 }
 
 .btn img:last-child,
@@ -180,8 +185,6 @@ input[type="submit"].btn_orange:hover,
 button.btn_orange:hover{
 	background: $color-orange-dark;
 }
-
-.btn_orange .icon{fill: #fff;}
 
 .btn_border,
 input[type="submit"].btn_border,
@@ -286,15 +289,15 @@ button[disabled].btn_border-grad .icon{fill: $color-grey;}
 .h-text-uppercase{text-transform: uppercase !important;}
 .h-text-bold {font-weight: 700 !important;}
 
-app-root[aria-hidden="true"] header,
-app-root[aria-hidden="true"] main{
-	filter: blur(5px);
-}
+// app-root[aria-hidden="true"] header,
+// app-root[aria-hidden="true"] main{
+// 	filter: blur(5px);
+// }
 
 .d-none{display: none !important;}
 
 .backdrop{
-	background: rgba(0, 0, 0, 0.32);
+	background: rgba(0, 0, 0, 0.6);
 	position: fixed;
 	top: 0;
 	left: 0;
