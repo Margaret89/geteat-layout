@@ -154,7 +154,7 @@
 	}
 
 	&__copyright{
-		@include font(normal, normal, 0.8rem, 1.2, $color-grey);
+		@include font(normal, normal, 0.8rem, 1rem, $color-grey);
 		text-align: center;
 		margin-top: 50px;
 
@@ -293,6 +293,13 @@ html[dir="rtl"]{
 		&__notice img{
 			margin-right: 0;
 			margin-left: 8px;
+		}
+
+		&__copyright{
+			img{
+				margin-left: 0;
+				margin-right: 2px;
+			}
 		}
 	}
 }

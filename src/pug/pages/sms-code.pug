@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Login';
+	- var title = 'Sms code';
 	- var shadow = true;
 	- var modal = true;
 
@@ -519,35 +519,31 @@ block modal
 				.popup__login.d-md-none
 					img(src='/assets/img/logo-white.svg', alt='')
 
-				.popup__head
-					.h1 Hey there!
+				.popup__head.d-md-none
+					.h1 Verification
+					.popup__text Please type the code sent to +972 55 2226266
 
 			.popup__content
-				form.form-site-wrap
-					.form-site
-						.form-site__content.form-site__content_center
-							.form-site__field
-								.form-site__input
-									input(type='text', placeholder='Phone number')
+				form.sms-form-wrap
+					.sms-form
+						.sms-form__content
+							.sms-form__text.d-none.d-md-block Please type the code sent to +972 55 2226266
 
-									// .input-auto
-									// 	input(type='text', placeholder='Phone number')
+							.sms-form__field
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
+								input(type='text', maxlength='1', onkeyup='autoTab(this)')
 
-									// 	.input-auto__list
-									// 		.input-auto__item Parametr 1
-									// 		.input-auto__item Parametr 2
-									// 		.input-auto__item Parametr 3
-									// 		.input-auto__item Parametr 4
-									// 		.input-auto__item Parametr 5
-						.form-site__btn
+						.sms-form__btn
 							button.btn(type='submit')
 								span Submit
 								+svg('ic-arrow-right','ic-arrow-right', '16', '12')
-							.form-site__btn-label Not now
 
-							.form-site__copyright.d-md-none
-								| Powered by 
-								img(src='/assets/img/logo.svg', alt='')
+							.sms-form__btn-label Didn't got it?
 
-
-
+							.sms-form__copyright.d-md-none
+									| Powered by 
+									img(src='/assets/img/logo.svg', alt='')

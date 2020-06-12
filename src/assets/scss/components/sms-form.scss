@@ -1,0 +1,96 @@
+/*-------------- sms-form -----------------*/
+.sms-form{
+	&__text{
+		@include font(normal, normal, 1rem, 1.2, $color-text);
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__field{
+		display: flex;
+		justify-content: center;
+	}
+
+	input[type="text"]{
+		height: 4.7rem;
+		width: 53px;
+		outline: none;
+		border: 0;
+		border-radius: 12px;
+		font-family: $font-site;
+		@include font(normal, normal, 2rem, 4.7rem, #4a4a4a);
+		text-align: center;
+		padding: 0 5px;
+		margin: 0 4px;
+		background: #faf9f9;
+		box-shadow: none;
+		transition: all 0.3s ease 0s;
+	}
+
+	input[type="text"]:focus{
+		box-shadow: none;
+	}
+
+	input[type="text"]::placeholder{
+		color: #9B9B9B;
+	}
+
+	input[type="text"]:focus{
+		border-color: $color-orange;
+	}
+
+	&__content{
+		width: 60%;
+		margin: 0 auto;;
+	}
+
+	&__field{
+		margin-bottom: 17px;
+	}
+
+	&__btn{
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	&__btn-label{
+		@include font(normal, 500, 0.9rem, 1.2, $color-text);
+		text-transform: uppercase;
+		margin-top: 24px;
+	}
+
+	&__copyright{
+		@include font(normal, normal, 0.8rem, 1rem, $color-grey);
+		text-align: center;
+		margin-top: 50px;
+
+		img{
+			margin-left: 2px;
+		}
+	}
+}
+
+html[dir="rtl"]{
+	.sms-form{
+		&__copyright{
+			img{
+				margin-left: 0;
+				margin-right: 2px;
+			}
+		}
+	}
+}
+
+
+
+@media (max-width: 767px) {
+	.sms-form{
+		&__content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: calc(100% - 140px);
+			width: 100%;
+		}
+	}
+}
