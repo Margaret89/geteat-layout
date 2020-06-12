@@ -108,6 +108,7 @@
 			height: calc(100vh - 68px);
 			margin-top: 68px;
 			overflow-y: auto;
+			border-radius: 12px 12px 0 0;
 
 			.popup{height: 100vh;}
 		}
@@ -219,6 +220,14 @@
 		}
 
 		.product{margin: 0;}
+
+		.cat-history{
+			padding: 40px 20px;
+
+			.btn{margin-bottom: 20px;}
+		}
+
+		.cat-coupon__title{text-align: left;}
 	}
 
 	html[dir="rtl"]{
