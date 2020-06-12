@@ -16,3 +16,13 @@ mixin dropDown(data)
 		.dropdown__list
 			each item in data.list
 				.dropdown__item= item.title
+
+mixin select(data)
+	.select
+		.select__head= data.head
+			span.select__arr
+				+svg('ic-arrow-down','ic-arrow-down', '12', '8')
+
+		.select__option
+			each item in data.list
+				.select__param(class=item.status?'active':'')= item.text

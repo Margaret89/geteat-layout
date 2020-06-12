@@ -156,16 +156,24 @@ block content
 			//- //- br
 			//- //- +dropDownColor(data,'','big')
 
-			//- //- br
-			//- //- br
-			//- //- .h2 Select
-			//- //- .select
-			//- //- 	.select__head Please Select...
-			//- //- 	.select__option
-			//- //- 		.select__param Parameter 1
-			//- //- 		.select__param Parameter 2
-			//- //- 		.select__param.active Parameter 3
-			//- //- 		.select__param Parameter 4
+			br
+			br
+			.h2 Select
+			-
+				var data={
+					head:'Please Select...',
+					list:[
+						{text:'Parameter 1'},
+						{text:'Parameter 2'},
+						{text:'Parameter 3', status:'active'},
+						{text:'Parameter 4'},
+					]
+				}
+
+			div(style="width: 250px")
+				+select(data)
+			
+
 			br
 			br
 			.h2 Notice
@@ -251,10 +259,10 @@ block content
 							+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
 						.type-icon__name ic-arrow-right
 
-					//- .type-icon__item
-					//- 	.type-icon__img
-					//- 		+svg('ic-arrow-left','ic-arrow-left ic-white', '16', '12')
-					//- 	.type-icon__name ic-arrow-left
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-left','ic-arrow-left ic-white', '16', '12')
+						.type-icon__name ic-arrow-left
 
 					//- .type-icon__item
 					//- 	.type-icon__img
@@ -383,6 +391,11 @@ block content
 					.type-icon__img
 						+svg('ic-minus','ic-minus', '10', '2')
 					.type-icon__name ic-minus
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-calendar','ic-calendar', '20', '20')
+					.type-icon__name ic-calendar
 
 				//- 		.type-icon__item
 				//- 			.type-icon__img

@@ -51,7 +51,7 @@
 	}
 
 	&__content{
-		width: 60%;
+		width: 64.3%;
 		margin: 0 auto;;
 	}
 
@@ -160,6 +160,22 @@
 
 		img{
 			margin-left: 2px;
+		}
+	}
+
+	.input-date{
+		position: relative;
+
+		input[type="text"],
+		input[type="date"]{
+			padding-right: 30px;
+		}
+
+		.ic-calendar{
+			position: absolute;
+			@include top-center;
+			right: 20px;
+			fill: #b0b0b0;
 		}
 	}
 }
@@ -299,6 +315,19 @@ html[dir="rtl"]{
 			img{
 				margin-left: 0;
 				margin-right: 2px;
+			}
+		}
+
+		.input-date{
+			input[type="text"],
+			input[type="date"]{
+				padding-right: 0;
+				padding-left: 30px;
+			}
+	
+			.ic-calendar{
+				right: 0;
+				left: 20px;
 			}
 		}
 	}
