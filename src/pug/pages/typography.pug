@@ -1,0 +1,596 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+
+block content
+	section
+		.container
+			h1 Typography
+
+			p
+				a(href='#') Link
+			p
+				| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+			p
+				| Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+			br
+			br
+			.h2 Additional classes for text
+			p
+				span.code text-left
+				|  text align left
+			p
+				span.code text-center
+				|  text align center
+			p
+				span.code text-right
+				|  text align right
+			p
+				span.code text-justify
+				|  text align across the width
+			p
+				span.code text-uppercase
+				|  text uppercase
+			p
+				span.code text-bold
+				|  text bold
+			br
+			br
+			.h2 Headers
+			h1 Header - h1
+			h2 Header - h2
+			h3 Header - h3
+			h4 Header - h4
+			h5 Header - h5
+			h6 Header - h6
+			br
+			p.h1 The class is called h1
+			p.h2 The class is called h2
+			p.h3 The class is called h3
+			p.h4 The class is called h4
+			p.h5 The class is called h5
+			p.h6 The class is called h6
+			br
+			br
+			br
+			.h2 Buttons
+			a.btn(href='#') Button
+			br
+			br
+			a.btn(href='#')
+				span Button
+				+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
+			br
+			br
+			a.btn.btn_border(href='#') Button
+
+			//- br
+			//- br
+			//- a.btn.btn_grey(href='#') Button
+
+			//- br
+			//- br
+			//- a(href="#").btn.btn_pink
+			//- 	+svg('ic-plus','ic-plus', '16', '16')
+			//- 	span Button
+
+			br
+			br
+			a(href="#").btn.btn_border-grad
+				span.btn__grad-content Button
+
+			br
+			br
+			a(href="#").btn.btn_border-grad
+				span.btn__grad-content
+					+svg('ic-alarm','ic-alarm', '15', '15')
+					span Button
+
+			br
+			br
+			a.btn.btn_small.btn_orange(href='#')
+				+svg('ic-crown','ic-crown ic-white', '16', '16')
+				span Button
+			//- br
+			//- br
+			//- a.btn.btn_small.btn_green(href='#')
+			//- 	+svg('ic-repeat','ic-repeat ic-white', '9', '10')
+			//- 	span Button
+			
+			br
+			br
+			div(style='padding: 20px; background: #d60b52; border-radius: 12px;')
+				a.btn.btn_border-white(href='#') Change
+				
+			br
+			br
+			.h2 Dropdown
+			-
+				var data={
+					head:'Tel Aviv branch',
+					list:[
+						{title:'Item1'},
+						{title:'Item2'},
+						{title:'Item3'},
+						{title:'Item4'},
+						{title:'Item5'},
+						{title:'Item6'},
+					]
+				};
+			+dropDown(data)
+			
+
+			//- //- br
+			//- //- br
+			//- //- .h2 Dropdown color
+			//- //- -
+			//- //- 	var data={
+			//- //- 		head:'Value',
+			//- //- 		list:[
+			//- //- 			{title:'Item1'},
+			//- //- 			{title:'Item2'},
+			//- //- 			{title:'Item3'},
+			//- //- 			{title:'Item4'},
+			//- //- 			{title:'Item5'},
+			//- //- 			{title:'Item6'},
+			//- //- 		]
+			//- //- 	};
+			//- //- +dropDownColor(data)
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'orange')
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'yellow')
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'blue')
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'grey')
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'red')
+			//- //- br
+			//- //- br
+			//- //- +dropDownColor(data,'','big')
+
+			//- //- br
+			//- //- br
+			//- //- .h2 Select
+			//- //- .select
+			//- //- 	.select__head Please Select...
+			//- //- 	.select__option
+			//- //- 		.select__param Parameter 1
+			//- //- 		.select__param Parameter 2
+			//- //- 		.select__param.active Parameter 3
+			//- //- 		.select__param Parameter 4
+			br
+			br
+			.h2 Notice
+			.notice
+				| VIP Club join request sent!
+				.notice__close
+					+svg('ic-close-circle','ic-close-circle', '16', '16')
+			br
+			br
+			.notice.notice_red
+				| VIP Club join request sent!
+				.notice__close
+					+svg('ic-close-circle','ic-close-circle', '16', '16')
+			//- //- br
+			//- //- br
+			//- //- .h2 Нестандартный checkbox
+			//- //- .input-check
+			//- //- 	input#checkbox1(type='checkbox', checked='checked')
+			//- //- 	label.input-check__label(for='checkbox1')
+			//- //- 		span.input-check__mark
+			//- //- 		span.input-check__text label
+
+			//- //- br
+			//- //- br
+			//- //- .input-check.input-check_circle
+			//- //- 	input#checkbox2(type='checkbox', checked='checked')
+			//- //- 	label.input-check__label(for='checkbox2')
+			//- //- 		span.input-check__mark
+			//- //- 		span.input-check__text label
+
+			//- //- br
+			//- //- br
+			//- //- .h2 Нестандартный radiobutton
+			//- //- .input-radio
+			//- //- 	input#radio1(type='radio', name="radio")
+			//- //- 	label.input-radio__label(for='radio1')
+			//- //- 		span.input-radio__mark
+			//- //- 		span.input-radio__text label
+
+			
+			//- //- br
+			//- //- br
+			//- //- .h2 Counter
+			//- //- .counter
+			//- //- 	.counter__min
+			//- //- 	input.counter__input(type='text', value='2')
+			//- //- 	.counter__max
+			//- //- br
+			//- //- br
+			//- //- .counter.counter_big
+			//- //- 	.counter__min
+			//- //- 	input.counter__input(type='text', value='2')
+			//- //- 	.counter__max
+			//- //- br
+			//- //- br
+			//- //- .h2 Card radio
+			//- //- .card-check-list
+			//- //- 	.card-check
+			//- //- 		input#delivery(name='geteat', type='radio', checked='checked')
+			//- //- 		label.card-check__label(for='delivery')
+			//- //- 			.card-check__mark
+			//- //- 			.card-check__img
+			//- //- 				img.card-check__img-grey(src='assets/img/delivery-grey.svg', alt='')
+			//- //- 				img.card-check__img-active(src='assets/img/delivery.svg', alt='')
+			//- //- 			.card-check__text Delivery
+			//- //- 	.card-check
+			//- //- 		input#take-away(name='geteat', type='radio')
+			//- //- 		label.card-check__label(for='take-away')
+			//- //- 			.card-check__mark
+			//- //- 			.card-check__img
+			//- //- 				img.card-check__img-grey(src='assets/img/package-grey.svg', alt='')
+			//- //- 				img.card-check__img-active(src='assets/img/package.svg', alt='')
+			//- //- 			.card-check__text Take away
+
+			br
+			br
+			br
+			.h2 Icons
+			div(style="background: #f28f16; padding: 10px;")
+				.type-icon.type-icon_white
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-right','ic-arrow-right ic-white', '16', '12')
+						.type-icon__name ic-arrow-right
+
+					//- .type-icon__item
+					//- 	.type-icon__img
+					//- 		+svg('ic-arrow-left','ic-arrow-left ic-white', '16', '12')
+					//- 	.type-icon__name ic-arrow-left
+
+					//- .type-icon__item
+					//- 	.type-icon__img
+					//- 		+svg('ic-arrow-up','ic-arrow-up ic-white', '14', '20')
+					//- 	.type-icon__name ic-arrow-up
+
+					.type-icon__item
+						.type-icon__img
+								+svg('ic-crown','ic-crown ic-white', '16', '16')
+						.type-icon__name ic-crown
+						
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-dashboard','ic-dashboard ic-white', '24', '24')
+			//- 			.type-icon__name ic-dashboard
+
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-calls','ic-calls ic-white', '24', '24')
+			//- 			.type-icon__name ic-calls
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-clients','ic-clients ic-white', '24', '24')
+			//- 			.type-icon__name ic-clients
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-food','ic-food ic-white', '24', '24')
+			//- 			.type-icon__name ic-food
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-orders','ic-orders ic-white', '24', '24')
+			//- 			.type-icon__name ic-orders
+
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-sms','ic-sms ic-white', '20', '14')
+			//- 			.type-icon__name ic-sms
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-time','ic-time ic-white', '24', '24')
+			//- 			.type-icon__name ic-time
+
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-reports','ic-reports ic-white', '18', '24')
+			//- 			.type-icon__name ic-reports
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-users','ic-users ic-white', '20', '24')
+			//- 			.type-icon__name ic-users
+							
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-cloud','ic-cloud ic-white', '24', '24')
+			//- 			.type-icon__name ic-cloud
+
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-popup','ic-popup ic-white', '24', '22')
+			//- 			.type-icon__name ic-popup
+
+			//- 		.type-icon__item
+			//- 			.type-icon__img
+			//- 					+svg('ic-settings','ic-settings ic-white', '24', '24')
+			//- 			.type-icon__name ic-settings
+							
+			br
+			br
+			.type-icon
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-alarm','ic-alarm', '20', '20')
+					.type-icon__name ic-alarm
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-close','ic-close', '20', '20')
+					.type-icon__name ic-close
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-close-thin','ic-close-thin', '20', '20')
+					.type-icon__name ic-close-thin
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-close-circle','ic-close-circle', '20', '20')
+					.type-icon__name ic-close-circle
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-arrow-down','ic-arrow-down', '12', '8')
+					.type-icon__name ic-arrow-down
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-search','ic-search ic-stroke', '15', '15')
+					.type-icon__name ic-search
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-check','ic-check', '21', '16')
+					.type-icon__name ic-check
+
+				//- 	.type-icon__item
+				//- 		.type-icon__img
+				//- 			+svg('ic-question','ic-question', '14', '22')
+				//- 		.type-icon__name ic-question
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-plus','ic-plus', '16', '16')
+					.type-icon__name ic-plus
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-minus','ic-minus', '10', '2')
+					.type-icon__name ic-minus
+
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-reset','ic-reset', '34', '24')
+				//- 			.type-icon__name ic-reset
+
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-reset-grey','ic-reset-grey', '34', '24')
+				//- 			.type-icon__name ic-reset-grey
+
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-filter','ic-filter', '24', '24')
+				//- 			.type-icon__name ic-filter
+
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-arrow-prev','ic-arrow-prev ic-stroke', '6', '12')
+				//- 			.type-icon__name ic-arrow-prev
+							
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-arrow-next','ic-arrow-next ic-stroke', '6', '12')
+				//- 			.type-icon__name ic-arrow-next
+
+				//- 		.type-icon__item
+				//- 			.type-icon__img
+				//- 				+svg('ic-keypad','ic-keypad', '28', '28')
+				//- 			.type-icon__name ic-keypad
+
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-pencil','ic-pencil', '16', '16')
+					.type-icon__name ic-pencil
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-repeat','ic-repeat', '22', '24')
+				//- 	.type-icon__name ic-repeat
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-more','ic-more', '4', '20')
+				//- 	.type-icon__name ic-more
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-smile','ic-smile', '24', '24')
+				//- 	.type-icon__name ic-smile
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-attach','ic-attach', '24', '24')
+				//- 	.type-icon__name ic-attach
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-bin','ic-bin', '14', '16')
+				//- 	.type-icon__name ic-bin
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-photo','ic-photo', '16', '14')
+				//- 	.type-icon__name ic-photo
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-big-arrow','ic-big-arrow', '24', '24')
+				//- 	.type-icon__name ic-big-arrow
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-world','ic-world', '16', '16')
+				//- 	.type-icon__name ic-world
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-cafe','ic-cafe', '16', '16')
+				//- 	.type-icon__name ic-cafe
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-outgoing-call','ic-outgoing-call', '16', '16')
+				//- 	.type-icon__name ic-outgoing-call
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-incoming-call','ic-incoming-call', '16', '16')
+				//- 	.type-icon__name ic-incoming-call
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-missed-call','ic-missed-call', '16', '16')
+				//- 	.type-icon__name ic-missed-call
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-customer','ic-customer', '28', '28')
+				//- 	.type-icon__name ic-customer
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-forward','ic-forward', '24', '20')
+				//- 	.type-icon__name ic-forward
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-microphone','ic-microphone', '20', '22')
+				//- 	.type-icon__name ic-microphone
+
+				//- .type-icon__item
+				//- 	.type-icon__img
+				//- 		+svg('ic-mail','ic-mail', '24', '16')
+				//- 	.type-icon__name ic-mail
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-calls-stroke','ic-calls-stroke', '16', '16')
+					.type-icon__name ic-calls-stroke
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-burger','ic-burger', '20', '20')
+					.type-icon__name ic-burger
+					
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-view-line','ic-view-line', '20', '14')
+					.type-icon__name ic-view-line
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-view-tile','ic-view-tile', '14', '14')
+					.type-icon__name ic-view-tile
+
+				.type-icon__item
+					.type-icon__img
+						+svg('ic-history','ic-history', '16', '16')
+					.type-icon__name ic-history
+
+			//- 	//- .type-icon__item
+			//- 	//- 	.type-icon__img
+			//- 	//- 		+svg('ic-address','ic-address', '14', '18')
+			//- 	//- 	.type-icon__name ic-address
+
+			//- 	//- .type-icon__item
+			//- 	//- 	.type-icon__img
+			//- 	//- 		+svg('ic-delivery','ic-delivery', '30', '24')
+			//- 	//- 	.type-icon__name ic-delivery
+
+			//- 	//- .type-icon__item
+			//- 	//- 	.type-icon__img
+			//- 	//- 		+svg('ic-bank','ic-bank', '24', '24')
+			//- 	//- 	.type-icon__name ic-bank
+
+			//- 	//- .type-icon__item
+			//- 	//- 	.type-icon__img
+			//- 	//- 		+svg('ic-star','ic-star', '12', '12')
+			//- 	//- 	.type-icon__name ic-star
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-package','ic-package', '28', '28')
+			//- 		.type-icon__name ic-package
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-direction','ic-direction', '28', '28')
+			//- 		.type-icon__name ic-direction
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-table','ic-table', '28', '28')
+			//- 		.type-icon__name ic-table
+					
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-coupon','ic-coupon', '34', '21')
+			//- 		.type-icon__name ic-coupon
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-setting','ic-setting', '28', '28')
+			//- 		.type-icon__name ic-setting
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-bell','ic-bell', '25', '28')
+			//- 		.type-icon__name ic-bell
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-share','ic-share', '28', '28')
+			//- 		.type-icon__name ic-share
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-nearby-rest','ic-nearby-rest', '32', '28')
+			//- 		.type-icon__name ic-nearby-rest
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-theme','ic-theme', '28', '28')
+			//- 		.type-icon__name ic-theme
+
+			//- 	.type-icon__item
+			//- 		.type-icon__img
+			//- 			+svg('ic-edit','ic-edit', '16', '16')
+			//- 		.type-icon__name ic-edit
+
+			//- br
+			//- br
+			//- br
+			//- br

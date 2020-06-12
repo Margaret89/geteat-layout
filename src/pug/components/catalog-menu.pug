@@ -1,0 +1,25 @@
+.catalog-menu
+	.catalog-menu__content
+		-
+			var list=[
+				{text:'Entrees', status:'active'},
+				{text:'Salads'},
+				{text:'Soups'},
+				{text:'Main dishes'},
+				{text:'Wok-noodles'},
+				{text:'Sweets'},
+				{text:'Children dishes'},
+				{text:'Side dishes'},
+				{text:'Japan’s Specials'},
+				{text:'Rolls'},
+				{text:'Main dishes'},
+				{text:'Wok-noodles'},
+				{text:'Extra dishes'},
+			];
+
+		each item in list
+			.catalog-menu__item(class=item.status=='active'?'active':item.status=='inactive'?'inactive':'')
+				a.catalog-menu__link(href='#')
+					span.catalog-menu__icon
+						+svg('ic-burger','ic-burger', '20', '20')
+					span.catalog-menu__text= item.text

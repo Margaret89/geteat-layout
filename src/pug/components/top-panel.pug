@@ -1,0 +1,33 @@
+section.top-panel
+	form.search-form-order
+		input(type='text', placeholder='Search')
+		button(type='submit')
+			+svg('ic-search','ic-search ic-stroke', '13', '13')
+
+	.top-panel__time
+		-
+			var data={
+				head:'Today 10:00-23:00',
+				list:[
+					{title:'Today 10:00-23:00'},
+					{title:'Mon 10:00-23:00'},
+					{title:'Tue 10:00-23:00'},
+					{title:'Wed 10:00-23:00'},
+					{title:'Thu 10:00-23:00'},
+					{title:'Fri 10:00-20:00'},
+					{title:'Sat 10:00-20:00'},
+				]
+			};
+		+dropDown(data)
+
+	.panel-delevery
+		.panel-delevery__title Delivery areas
+		.panel-delevery__list
+			.panel-delevery__item
+				img(src='/assets/img/kasher.png', alt='')
+			.panel-delevery__item
+				img(src='/assets/img/express.png', alt='')
+	.top-panel__contact
+		a.top-panel__phone(href='tel:9200')
+			+svg('ic-calls-stroke','ic-calls-stroke', '16', '16')
+			|*9200

@@ -1,0 +1,126 @@
+// /*-------------- top-panel -----------------*/
+.top-panel{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 3rem;
+	border-radius: 1.5rem;
+	padding: 11px 20px;
+	background:#fff;
+	box-shadow: 0px 12px 20px rgba(171, 171, 171, 0.25);
+	margin-bottom: 24px;
+
+	.search-form-order{
+		width: 25%;
+		padding-right: 20px;
+		border-right: 1px solid #e9e9e9;
+	}
+
+	&__time{
+		width: 190px;
+		border-right: 1px solid #e9e9e9;
+	}
+
+	&__contact{
+		width: 114px;
+		text-align: right;
+	}
+
+	&__phone{
+		@include font(normal, normal, 1rem, 1.2, $color-grey);
+		text-decoration: none;
+		position: relative;
+
+		.icon{
+			stroke: $color-red;
+			vertical-align: middle;
+			margin-right: 8px;
+		}
+	}
+}
+
+.panel-delevery{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(75% - 304px);
+	padding: 0 20px;
+
+	&__title{
+		@include font(normal, normal, 1rem, 1.2, $color-grey);
+	}
+
+	&__list{
+		display: flex;
+		align-items: center;
+	}
+
+	&__item:not(:last-child){
+		margin-right: 13px;
+	}
+
+	img{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+html[dir="rtl"]{
+	.top-panel{
+		.search-form-order{
+			padding-right: 0;
+			padding-left: 20px;
+		}
+
+		&__contact{text-align: left;}
+
+		&__phone .icon{
+			margin-left: 8px;
+			margin-right: 0;
+		}
+
+		&__time,
+		.search-form-order{
+			border-right: 0;
+			border-left: 1px solid #e9e9e9;
+		}
+	}
+
+	.panel-delevery{
+		&__item:not(:last-child){
+			margin-right: 0;
+			margin-left: 13px;
+		}
+	}
+}
+
+// @media (max-width: 1199px) {
+// 	.top-panel{
+// 		flex-wrap: wrap;
+// 		.search-form-order{width: 50%;}
+// 		&__time{border-right: 0;}
+// 	}
+
+// 	.panel-delevery{
+// 		width: calc(75% - 114px);
+// 		margin-top: 15px;
+// 	}
+
+// 	html[dir="rtl"]{
+// 		.top-panel{
+// 			&__time{border-left: 0;}
+// 		}
+// 	}
+// }
+
+// @media (max-width: 991px) {
+// 	.panel-delevery{
+// 		width: 100%;
+// 		margin-bottom: 15px;
+// 		padding: 0;
+// 	}
+
+// 	.top-panel{
+// 		&__contact{width: 100%;}
+// 	}
+// }

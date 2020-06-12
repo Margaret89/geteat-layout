@@ -96,6 +96,10 @@ main{
 	width: calc(100% - 80px);
 	margin-left: auto;
 	margin-right: auto;
+
+	width: calc(100% - 64px);
+margin-left: 24px;
+margin-right: 40px;
 }
 
 input[type="submit"].btn,
@@ -130,19 +134,26 @@ button.btn:hover{
 
 .btn img,
 input[type="submit"].btn img,
-button.btn img{
+button.btn img,
+.btn .icon,
+input[type="submit"].btn .icon,
+button.btn .icon{
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: -2px;
 }
 
 .btn img:last-child,
-button.btn img:last-child{
+button.btn img:last-child,
+.btn .icon:last-child,
+button.btn .icon:last-child{
 	margin-left: 8px;
 }
 
 .btn img:first-child,
-button.btn img:first-child{
+button.btn img:first-child,
+.btn .icon:first-child,
+button.btn .icon:first-child{
 	margin-right: 8px;
 }
 
@@ -232,10 +243,8 @@ button.btn_border-grad{
 	transition: all 0.3s ease 0s;
 }
 
-button img.btn__grad-img-grey{
-	display: none;
-	margin-right: 8px;
-}
+.btn_border-grad .icon{fill: $color-red; transition: all 0.3s ease 0s;}
+.btn_border-grad:hover .icon{fill: #fff;}
 
 .btn_border-grad:hover .btn__grad-content,
 input[type="submit"].btn_border-grad:hover .btn__grad-content,
@@ -258,9 +267,7 @@ button[disabled].btn_border-grad:hover .btn__grad-content{
 	cursor: auto;
 }
 
-button[disabled].btn_border-grad img{display: none;}
-button[disabled].btn_border-grad img.btn__grad-img-grey{display: inline-block;}
-
+button[disabled].btn_border-grad .icon{fill: $color-grey;}
 
 .code{
 	background-color: #f7f7f7;
@@ -289,18 +296,20 @@ app-root[aria-hidden="true"] main{
 
 html[dir="rtl"]{
 	.btn img:last-child,
-	button.btn img:last-child{
+	button.btn img:last-child,
+	.btn .icon:last-child,
+	button.btn .icon:last-child{
 		margin-left: 0;
 		margin-right: 8px;
 	}
 
 	.btn img:first-child,
-	button.btn img:first-child{
+	button.btn img:first-child,
+	.btn .icon:first-child,
+	button.btn .icon:first-child{
 		margin-right: 0;
 		margin-left: 8px;
 	}
-
-	button img.btn__grad-img-grey{margin-left: 8px;}
 }
 
 @media (min-width: 768px) {
