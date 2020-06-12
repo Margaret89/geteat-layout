@@ -1,0 +1,149 @@
+/*-------------- credit-card -----------------*/
+.credit-card{
+	&__content{
+		background: #faf9f9;
+		border-radius: 20px;
+		padding: 32px 48px 12px;
+	}
+
+	&__input{
+		position: relative;
+	}
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="date"]{
+		height: 3rem;
+		width: 100%;
+		outline: none;
+		border: 1px solid transparent;
+		border-radius: 1.5rem;
+		font-family: $font-site;
+		@include font(normal, normal, 1rem, 3rem, #4a4a4a);
+		padding: 0 20px;
+		margin: 0;
+		background: #fff;
+		box-shadow: none;
+		transition: all 0.3s ease 0s;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="date"]:focus,
+	textarea:focus{
+		box-shadow: none;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="date"]::placeholder{
+		color: #9B9B9B;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="date"]:focus{
+		border-color: $color-orange;
+	}
+
+	&__field{
+		margin-bottom: 17px;
+	}
+
+	&__label{
+		@include font(normal, 500, 0.75rem, 1.2, #989898);
+		text-transform: uppercase;
+		margin-bottom: 6px;
+	}
+
+	&__field-wrap{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+
+	&__field-wrap &__field{
+		width: calc(50% - 16px);
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+
+	&__btn{
+		text-align: center;
+		margin-top: 32px;
+	}
+
+	&__btn .btn{
+		min-width: 180px;
+	}
+
+	&__bottom{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__bottom_end{justify-content: flex-end;}
+
+	&__field.error &__label{color: $color-red;}
+
+	&__field.error &__input::after{
+		content: '';
+		display: inline-block;
+		width: calc(100% - 40px);
+		height: 2px;
+		background: $color-red;
+		position: absolute;
+		bottom: 11px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+}
+
+.credit-card-type{
+	display: flex;
+	align-items: center;
+
+	&__item:not(:last-child){
+		margin-right: 16px;
+	}
+}
+
+html[dir="rtl"]{
+	.credit-card-type{
+		&__item:not(:last-child){
+			margin-right: 0;
+			margin-left: 16px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.credit-card{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		&__content{
+			padding: 0;
+			background: transparent;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="date"]{
+			background: #faf9f9;
+		}
+
+		&__field{margin-bottom: 25px;}
+		&__field-wrap{align-items: flex-end;}
+		&__field-wrap &__field{width: calc(33.33% - 16px);}
+	}
+
+	.credit-card-type{
+		margin-bottom: 27px;
+	}
+}
