@@ -1,0 +1,284 @@
+/*-------------- order-history -----------------*/
+.history-list-wrap{
+	position: relative;
+
+	&__more{
+		display: inline-block;
+		width: 100%;
+		height: 120px;
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		.icon{
+			max-width: 100%;
+			max-height: 100%;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+
+	&.end &__more{display: none;}
+}
+
+.history-list{
+	max-height: calc(100vh - 380px);
+	overflow-y: auto;
+	position: relative;
+	margin-bottom: -78px;
+}
+
+.history-item{
+	background: #F3F3F3;
+	border-radius: 12px;
+	padding: 15px 20px 10px;
+	margin-bottom: 18px;
+	position: relative;
+
+	&__main{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 38px;
+		position: relative;
+	}
+
+	&__info{
+		padding-right: 15px;
+	}
+
+	&__num,
+	&__num a{
+		@include font(normal, 500, 1.25rem, 1.2, $color-orange);
+		text-decoration: none;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__num a:hover{color: $color-orange-dark;}
+
+	&__address{
+		@include font(normal, normal, 1rem, 1.2, $color-grey);
+		margin-top: 5px;
+	}
+
+	&__add{
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 8px;
+	}
+
+	&__date,
+	&__cat{
+		@include font(normal, normal, 0.75rem, 1.2, #c4c4c4);
+	}
+
+	&__date{margin-right: 16px;}
+	&__cat .icon{
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 12px;
+		margin-right: 4px;
+		fill: #c4c4c4;
+	}
+
+	&__price{
+		@include font(normal, 500, 1.5rem, 1.2, $color-red);
+		white-space: nowrap;
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 10px;
+		position: absolute;
+		right: 0;
+		@include top-center;
+		transition: all 0.3s ease 0s;
+
+		.icon{fill: $color-red;}
+	}
+
+	&__list{
+		display: none;
+		margin-top: 13px;
+	}
+
+	&.open &__list{display: block;}
+
+	&.open &__arr{transform: translateY(-50%) rotate(180deg);}
+
+	&__btn{
+		text-align: center;
+		margin-bottom: 6px;
+	}
+
+	&__btn .btn_small{
+		height: 2rem;
+		min-width: 112px;
+		line-height: 2rem;
+		font-size: 1rem;
+		border-radius: 1rem;
+	}
+
+	&.inactive{
+		background: rgba(243, 243, 243, 0.3);
+	}
+
+	&.inactive &__main,
+	&.inactive &__list{
+		opacity: 0.3;
+	}
+
+	&:last-child{margin-bottom: 80px;}
+}
+
+.history-product{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 0;
+	border-top: 1px solid #e9e9e9;
+
+	&__img{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		border-radius: 8px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		text-decoration: none;
+	}
+
+	&__content{
+		width: calc(100% - 52px);
+	}
+
+	&__name,
+	&__name a{
+		@include font(normal, 500, 1rem, 1.2, #4a4a4a);
+		transition: all 0.3s ease 0s;
+		text-decoration: none;
+	}
+
+	&__name a:hover{color: $color-orange;}
+
+	&__price{
+		@include font(normal, 500, 0.75rem, 1.2, #a4a4a4);
+		margin-top: 8px;
+	}
+}
+
+html[dir="rtl"]{
+	.history-item{
+		&__date{
+			margin-right: 0;
+			margin-left: 16px;
+		}
+
+		&__cat .icon{
+			margin-right: 0;
+			margin-left: 4px;
+		}
+
+		&__main{
+			padding-right: 0;
+			padding-left: 38px;
+		}
+
+		&__arr{
+			right: auto;
+			left: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.order-history{
+		padding: 0 20px 20px;
+
+		&__top{
+			margin: 0 -20px 0;
+			padding: 20px;
+			background: #f3f5f8;
+		}
+
+		&__back{
+			display: inline-block;
+			@include font(normal, 500, 1rem, 1, $color-red);
+			text-transform: uppercase;
+			position: relative;
+
+			.icon{
+				fill: $color-red;
+				margin-right: 10px;
+				margin-top: -4px;
+			}
+		}
+
+		&__head{
+			background: #f3f5f8;
+			border-radius: 0 0 12px 12px;
+			margin: 0 -20px 25px;
+			padding: 7px 20px 25px;
+		}
+
+		& &__head h2,
+		& &__head .h2{
+			color: $color-text;
+		}
+	}
+
+	.history-list{max-height: calc(100vh - 325px);}
+
+	.history-item{
+		padding: 15px 16px 10px;
+
+		&__num,
+		&__num a{
+			font-size: 1.125rem;
+		}
+
+		&__price{font-size: 1.25rem;}
+		&__main{padding-right: 28px;}
+	}
+
+	.history-product{
+		&__img{
+			width: 48px;
+    		height: 48px;
+		}
+
+		&__content{
+			width: calc(100% - 64px);
+		}
+	}
+
+	.history-list{
+		margin-bottom: -30px;
+	}
+
+	html[dir="rtl"]{
+		.history-item{
+			&__main{
+				padding-right: 0;
+				padding-left: 28px;
+			}
+		}
+
+		.order-history{
+			&__back{
+				.icon{
+					margin-right: 0;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}

@@ -78,7 +78,7 @@
 	}
 
 	.profile{width: 91.5%;}
-	.order-history{width: 81%;}
+	.order-history{width: 85.8%;}
 	.credit-card{width: 81.5%;}
 	.pay-form{width: 81%;}
 	.pay-choose-form{width: 87%;}
@@ -102,6 +102,7 @@
 		max-width: 100%;
 		max-height: 100%;
 		padding: 0;
+		border-radius: 0;
 
 		&_mob-bot{
 			height: calc(100vh - 68px);
