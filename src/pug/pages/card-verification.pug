@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Card details';
+	- var title = 'Card verification';
 	- var shadow = true;
 	- var modal = true;
 
@@ -521,7 +521,7 @@ block modal
 					|back
 
 				.popup__head
-					.h1 Card details
+					.h1 Card verification
 
 			.popup__content
 				form.credit-card-wrap
@@ -538,10 +538,10 @@ block modal
 									.credit-card__input
 										input(type='date')
 
-								.credit-card__field
-									.credit-card__label CVV
+								.credit-card__field.error
+									.credit-card__label CVV REQUIRED
 									.credit-card__input
-										input(type='text', placeholder='272')
+										input(type='text')
 
 								.credit-card-type.d-md-none
 									.credit-card-type__item
@@ -550,14 +550,7 @@ block modal
 									.credit-card-type__item
 										img(src='/assets/img/visa.svg', alt='')
 
-							.credit-card__bottom
-								.input-check
-									input#save(type='checkbox')
-									label.input-check__label(for='save')
-										span.input-check__mark
-											+svg('ic-check','ic-check', '12', '9')
-										span.input-check__text Save card for later
-
+							.credit-card__bottom.credit-card__bottom_end
 								.credit-card-type.d-none.d-md-flex
 									.credit-card-type__item
 										img(src='/assets/img/mastercard.svg', alt='')
