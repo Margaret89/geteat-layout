@@ -77,13 +77,20 @@ html[dir="rtl"]{
 
 @media (max-width: 1199px) {
 	.catalog-menu{
-		display: flex;
 		width: 100%;
-		overflow-x: auto;
+		height: auto;
 		background: transparent;
 		box-shadow: none;
-		padding: 0;
 		margin-bottom: 24px;
+
+		&::after{display: none;}
+
+		&__content{
+			display: flex;
+			width: 100%;
+			padding: 0;
+			overflow-x: auto;
+		}
 
 		&__text{
 			white-space: nowrap;
@@ -120,6 +127,11 @@ html[dir="rtl"]{
 		&__icon{
 			width: 16px;
 		}
+
+		&__item.active &__icon .icon,
+		&__item:hover &__icon .icon{
+			fill: #fff;
+		}
 	}
 
 	html[dir="rtl"]{
@@ -135,13 +147,19 @@ html[dir="rtl"]{
 @media (max-width: 767px) {
 	.catalog-menu{
 		width: calc(100% + 40px);
-		border-radius: 0;
 		margin-left: -20px;
 		margin-right: -20px;
-		padding: 0 20px 20px;
+		border-radius: 0;
 		background: #fff;
 
+		&__content{
+			padding: 0 20px 20px;
+		}
+
 		&__link{
+			display: inline-flex;
+			align-items: center;
+			text-decoration: none;
 			padding: 14px 12px;
 		}
 	}

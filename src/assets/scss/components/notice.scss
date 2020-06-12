@@ -2,6 +2,7 @@
 .notice-layout{
 	display: flex;
 	flex-direction: column;
+	max-width: calc(100% - 48px);
 	position: absolute;
 	top: 24px;
 	right: 24px;
@@ -29,6 +30,7 @@
 .notice{
 	display: inline-block;
 	width: 332px;
+	max-width: 100%;
 	background: #E0F9DC;
 	border-radius: 12px;
 	@include font(normal, 500, 1rem, 1.2, $color-green);

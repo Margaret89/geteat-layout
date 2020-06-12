@@ -1125,7 +1125,7 @@ html[dir="rtl"]{
 			min-width: 32px;
 		}
 
-		&_tile &__btn::after{
+		&_tile &__btn .icon{
 			height: 14px;
 			width: 14px;
 		}

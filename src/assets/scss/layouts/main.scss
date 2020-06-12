@@ -96,10 +96,6 @@ main{
 	width: calc(100% - 80px);
 	margin-left: auto;
 	margin-right: auto;
-
-	width: calc(100% - 64px);
-margin-left: 24px;
-margin-right: 40px;
 }
 
 input[type="submit"].btn,
@@ -316,6 +312,7 @@ html[dir="rtl"]{
 	.d-md-block{display: block !important;}
 	.d-md-inline-block{display: inline-block !important;}
 	.d-md-flex{display: flex !important;}
+	.d-md-none{display: none !important;}
 }
 
 @media (max-width: 767px) {
@@ -325,4 +322,9 @@ html[dir="rtl"]{
 	}
 
 	main{padding-top: 0;}
+
+	.container{
+		width: 100%;
+		margin: 0;
+	}
 }
