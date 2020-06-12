@@ -1,0 +1,215 @@
+/*-------------- profile -----------------*/
+.profile{
+	&__author{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+
+	&__photo{
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background: #fff url(#{$path-img}/ava-woman.jpg) no-repeat center;
+		background-size: contain;
+		box-shadow: 0px 12px 20px rgba(171, 171, 171, 0.25);
+		position: relative;
+	}
+
+	&__photo-icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		background: $color-red;
+		border-radius: 50%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		.icon{
+			max-width: 100%;
+			max-height: 100%;
+			fill: #fff;
+		}
+	}
+
+	&__info{
+		width: calc(100% - 135px);
+	}
+
+	&__head{
+		@include font(normal, 500, 2rem, 1.2, $color-text);
+		margin-bottom: 7px;
+	}
+
+	&__text{
+		@include font(normal, normal, 1rem, 1.2, #a4a4a4);
+		margin-top: 12px;
+	}
+
+	&__club-icon{
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: $color-orange;
+		margin-left: 12px;
+	}
+
+	.form-site{
+		&__content{width: 100%;}
+		&__btn{margin-top: 35px;}
+	}
+}
+
+.edit-info{
+	&__list{
+		background: #faf9f9;
+		border-radius: 12px;
+		padding: 8px 20px;
+	}
+
+	&__item{
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 0;
+	}
+
+	&__item:not(:last-child){
+		border-bottom: 1px solid #eaecee;
+	}
+
+	&__info{
+		width: calc(100% - 120px);
+	}
+
+	&__title{
+		@include font(normal, normal, 1rem, 1.2, #4a4a4a);
+	}
+
+	&__text{
+		@include font(normal, normal, 0.9rem, 1.2, #a1a1a1);
+		margin-top: 8px;
+	}
+
+	&__btn{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		max-width: 100px;
+	}
+
+	&__edit,
+	&__del{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+	}
+	
+	&__edit{background: #fcecd8;}
+	&__del{background: #f7dbe4; margin-left: 8px;}
+
+	&__edit .icon{fill: $color-orange;}
+	&__del .icon{fill: $color-red;}
+
+	&__edit:hover{background-color: #ffe4c3;}
+	&__del:hover{background-color: #fbc5d6;}
+}
+
+html[dir="rtl"]{
+	.edit-info__del{
+		margin-left: 0;
+		margin-right: 8px;
+	}
+
+	.profile__club-icon{
+		margin-left: 0;
+		margin-right: 12px;
+	}
+}
+
+@media (max-width: 767px) {
+	.profile{
+		padding: 0 20px 60px;
+
+		&__top{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 -20px 0;
+			padding: 0 20px 20px;
+			background: #f3f5f8;
+		}
+
+		&__back{
+			display: inline-block;
+			@include font(normal, 500, 1rem, 1, $color-red);
+			text-transform: uppercase;
+			position: relative;
+
+			.icon{
+				fill: $color-red;
+				margin-right: 10px;
+			}
+		}
+
+		&__exit{
+			display: inline-block;
+			height: 20px;
+			width: 20px;
+			// background: url(#{$path-icon}/ic-exit.svg) no-repeat center;
+			// background-size: contain;
+		}
+
+		&__author{
+			margin: 0 -20px 25px;
+			padding: 0 20px 25px;
+			background: #f3f5f8;
+			border-radius: 0 0 12px 12px;
+		}
+
+		&__head{font-size: 1.5rem;}
+		&__text{font-size: 0.875rem; margin-top: 8px;}
+
+		&__club-icon{
+			width: 20px;
+			height: 20px;
+			padding: 4px;
+		}
+
+		&__info{width: calc(100% - 125px);}
+
+		.form-site__btn{
+			width: 100%;
+			padding: 60px 20px 20px;
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) -14.18%, #FFFFFF 82.47%);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 1000;
+		}
+	}
+
+	html[dir="rtl"]{
+		.profile{
+			&__back{
+				.icon{
+					margin-right: 0;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
