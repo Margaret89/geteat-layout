@@ -198,13 +198,23 @@ block content
 
 					span.input-check__text label
 
-			//- //- br
-			//- //- br
-			//- //- .input-check.input-check_circle
-			//- //- 	input#checkbox2(type='checkbox', checked='checked')
-			//- //- 	label.input-check__label(for='checkbox2')
-			//- //- 		span.input-check__mark
-			//- //- 		span.input-check__text label
+			br
+			br
+			.input-check.input-check_circle
+				input#checkbox2(type='checkbox', checked='checked')
+				label.input-check__label(for='checkbox2')
+					span.input-check__mark
+						+svg('ic-check','ic-check', '12', '9')
+					span.input-check__text label
+
+			br
+			br
+			.input-check.input-check_circle.input-check_big
+				input#checkbox2(type='checkbox', checked='checked')
+				label.input-check__label(for='checkbox2')
+					span.input-check__mark
+						+svg('ic-check','ic-check', '20', '15')
+					span.input-check__text label
 
 			//- //- br
 			//- //- br

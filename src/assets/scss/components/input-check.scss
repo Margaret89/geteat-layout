@@ -58,11 +58,6 @@
 		width: 32px;
 		height: 32px;
 	}
-
-	&_big input[type=checkbox]:checked + &__label &__mark:after{
-		width: 20px;
-		height: 20px;
-	}
 }
 
 html[dir="rtl"]{
