@@ -1,0 +1,40 @@
+.mob-sidebar(class=mob_sidebar=='active'?'active':'')
+	.mob-sidebar__top
+		.mob-sidebar-delivery
+			.mob-sidebar-delivery__name Tel Aviv Express
+			.mob-sidebar-delivery__address Fishman 19, Tel Aviv
+			.mob-sidebar-delivery__list
+				.mob-sidebar-delivery__item
+					img(src='/assets/img/kasher.png', alt='')
+				.mob-sidebar-delivery__item
+					img(src='/assets/img/express.png', alt='')
+		.mob-sidebar__time
+			.dropdown
+				.dropdown__head
+					span.dropdown__icon
+						+svg('ic-time','ic-time', '24', '24')
+					| Today 10:00-23:00
+					span.dropdown__arr
+						+svg('ic-arrow-down','ic-arrow-down', '10', '7')
+
+				.dropdown__list
+					.dropdown__item Today 10:00-23:00
+					.dropdown__item Mon 10:00-23:00
+					.dropdown__item Tue 10:00-23:00
+					.dropdown__item Wed 10:00-23:00
+					.dropdown__item Thu 10:00-23:00
+					.dropdown__item Fri 10:00-20:00
+					.dropdown__item Sat 10:00-20:00
+
+		.mob-sidebar-address
+			.mob-sidebar-address__icon
+				+svg('ic-address','ic-address', '22', '28')
+
+			.mob-sidebar-address__text Delivery areas
+	.mob-sidebar__bottom
+		a.btn.btn_orange(href='tel:9200')
+			+svg('ic-calls','ic-calls', '20', '20')
+			span *9200
+		.cat-history__copyright
+			| Powered by 
+			img(src='/assets/img/logo.svg', alt='')

@@ -56,7 +56,8 @@
 	}
 
 	&__icon{margin-right: 20px;}
-	&__icon img{
+	&__icon img,
+	&__icon .icon{
 		display: inline-block;
 		vertical-align: middle;
 	}

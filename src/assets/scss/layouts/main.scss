@@ -85,6 +85,8 @@ h6,
 	width: 100%;
 	max-width: 1920px;
 	margin: 0 auto;
+
+	&.blur{filter: blur(5px);}
 }
 
 main{
@@ -178,6 +180,8 @@ input[type="submit"].btn_orange:hover,
 button.btn_orange:hover{
 	background: $color-orange-dark;
 }
+
+.btn_orange .icon{fill: #fff;}
 
 .btn_border,
 input[type="submit"].btn_border,
@@ -289,6 +293,15 @@ app-root[aria-hidden="true"] main{
 
 .d-none{display: none !important;}
 
+.backdrop{
+	background: rgba(0, 0, 0, 0.32);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1005;
+}
 
 html[dir="rtl"]{
 	.btn img:last-child,

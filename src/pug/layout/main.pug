@@ -9,7 +9,7 @@ html(lang='ru')
 		title #{title}
 
 	body
-		.wrapper
+		.wrapper(class=shadow?'blur':'')
 			include ./header
 			main
 				block header-ban
@@ -18,3 +18,9 @@ html(lang='ru')
 					+h1(h1)
 				block content
 			include ./footer
+
+		if shadow
+			.backdrop
+
+		if mob_sidebar
+			include ../components/sidebar-mobile
