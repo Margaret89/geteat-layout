@@ -116,6 +116,30 @@
 	&__item:not(:last-child){margin-right: 5px;}
 }
 
+.top-panel-timer-wrap{
+	background: #fff;
+	margin: 0 -20px -10px;
+	padding: 8px 20px 0;
+	position: relative;
+	z-index: 2;
+}
+
+.top-panel-timer{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px 8px 6px 16px;
+	background: #e0f9dc;
+	border-radius: 12px;
+
+	&_red{background: #ffedf4;}
+
+	&__text{
+		@include font(normal, 500, 0.875rem, 1.2, #4a4a4a);
+		margin-right: 6px;
+	}
+}
+
 html[dir="rtl"]{
 	.top-panel{
 		.search-form-order{
@@ -179,44 +203,51 @@ html[dir="rtl"]{
 			margin-left: 5px;
 		}
 	}
-}
 
-@media (max-width: 1199px) {
-	.top-panel{
-		flex-wrap: wrap;
-		&__time{border-right: 0;}
-
-		.search-form-order{
-			width: 50%;
-			margin-bottom: 10px;
-		}
-
-		&__timer-wrap{
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			width: 100%;
-		}
-
-		&__timer-wrap &__timer,
-		&__timer-wrap &__time,
-		&__timer-wrap .panel-delevery,
-		&__timer-wrap .top-panel-sign,
-		&__timer-wrap &__contact{
-			margin-top: 5px;
-			margin-bottom: 5px;
-		}
-	}
-
-	.panel-delevery{
-		width: calc(75% - 114px);
-	}
-
-	html[dir="rtl"]{
-		.top-panel{
-			&__time{border-left: 0;}
+	.top-panel-timer{
+		&__text{
+			margin-right: 0;
+			margin-left: 6px;
 		}
 	}
 }
+
+// @media (max-width: 1199px) {
+// 	.top-panel{
+// 		flex-wrap: wrap;
+// 		&__time{border-right: 0;}
+
+// 		.search-form-order{
+// 			width: 50%;
+// 			margin-bottom: 10px;
+// 		}
+
+// 		&__timer-wrap{
+// 			flex-wrap: wrap;
+// 			justify-content: flex-start;
+// 			width: 100%;
+// 		}
+
+// 		&__timer-wrap &__timer,
+// 		&__timer-wrap &__time,
+// 		&__timer-wrap .panel-delevery,
+// 		&__timer-wrap .top-panel-sign,
+// 		&__timer-wrap &__contact{
+// 			margin-top: 5px;
+// 			margin-bottom: 5px;
+// 		}
+// 	}
+
+// 	.panel-delevery{
+// 		width: calc(75% - 114px);
+// 	}
+
+// 	html[dir="rtl"]{
+// 		.top-panel{
+// 			&__time{border-left: 0;}
+// 		}
+// 	}
+// }
 
 // @media (max-width: 991px) {
 // 	.panel-delevery{

@@ -250,7 +250,7 @@ block content
 
 			br
 			br
-			.h2 Card radio
+			.h2 Card check
 			.card-check-list
 				.card-check
 					input#delivery(name='geteat', type='radio', checked='checked')
@@ -278,6 +278,33 @@ block content
 							img.card-check__img-active(src='assets/img/package.svg', alt='')
 							
 						.card-check__text Take away
+			
+			br
+			br
+			.prod-check-list
+				-
+					var list=[
+						{img:'burger1.png', status:'active'},
+						{img:'burger2.png', status:'active'},
+						{img:'burger1.png', status:'active'},
+						{img:'burger2.png'},
+					]
+
+				each item, index in list
+					.prod-check
+						if(item.status)
+							input(type='checkbox', checked='checked', id="prod"+index)
+						else
+							input(type='checkbox', id="prod"+index)
+
+						label.prod-check__label(for='prod'+index)
+							.prod-check__mark
+								+svg('ic-check','ic-check', '35', '26')
+
+							.prod-check__img
+								img(src='assets/img/'+item.img, alt='')
+
+
 
 			br
 			br

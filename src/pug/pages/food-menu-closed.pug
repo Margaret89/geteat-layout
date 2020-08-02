@@ -344,13 +344,31 @@ block content
 					img(src='/assets/img/logo.svg', alt='')
 				a.header__link(href='#') Example
 			.new-order(*ngif='mobile')
+				section.top-panel-timer-wrap
+					.top-panel-timer.top-panel-timer_red
+						.top-panel-timer__text We are closed, opens in
+
+						.timer
+							.timer__sect
+								.timer__item 0
+								.timer__item 0
+
+							.timer__sect
+								.timer__item 2
+								.timer__item 3
+
+							.timer__sect
+								.timer__item 0
+								.timer__item 3
+
+
 				section.new-order-top
 					.new-order-top__content
 						.search-form-order-wrap
 							.search-form-order-wrap__btn
 								+svg('ic-search','ic-search ic-stroke', '16', '16')
 								
-							.search-form-order-wrap__popup.active
+							.search-form-order-wrap__popup
 								form.search-form-order
 									input(type='text', placeholder='Search')
 
@@ -405,7 +423,7 @@ block content
 											.cat-filter__icon
 												img(src='/assets/img/avocado.svg', alt='')
 											.cat-filter__text Lorem
-						.page-mob-profile.active
+						.page-mob-profile
 							.page-mob-profile__content
 								.page-mob-profile__photo
 									.page-mob-profile__photo-icon

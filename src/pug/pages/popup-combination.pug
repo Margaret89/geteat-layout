@@ -1,7 +1,9 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Food menu';
+	- var title = 'Popup combination';
+	- var shadow = true;
+	- var modal = true;
 
 block content
 	section.container
@@ -15,29 +17,6 @@ block content
 							include ../components/catalog-menu
 
 							.catalog__content
-								section.panel-time
-									.panel-time__info
-										.panel-time__img
-											img(src="assets/img/open-sign.svg", alt="")
-
-										.panel-time__title We’re open
-
-									.panel-time__timer
-										.panel-time__label Closes in:
-
-										.timer.timer_big
-											.timer__sect
-												.timer__item 0
-												.timer__item 0
-
-											.timer__sect
-												.timer__item 2
-												.timer__item 3
-
-											.timer__sect
-												.timer__item 0
-												.timer__item 3
-
 								section.catalog__action
 									.cat-filter
 										.cat-filter__item.active
@@ -312,30 +291,13 @@ block content
 					img(src='/assets/img/logo.svg', alt='')
 				a.header__link(href='#') Example
 			.new-order(*ngif='mobile')
-				section.top-panel-timer-wrap
-					.top-panel-timer
-						.top-panel-timer__text We’re closing in
-
-						.timer
-							.timer__sect
-								.timer__item 0
-								.timer__item 0
-
-							.timer__sect
-								.timer__item 2
-								.timer__item 3
-
-							.timer__sect
-								.timer__item 0
-								.timer__item 3
-
 				section.new-order-top
 					.new-order-top__content
 						.search-form-order-wrap
 							.search-form-order-wrap__btn
 								+svg('ic-search','ic-search ic-stroke', '16', '16')
 								
-							.search-form-order-wrap__popup
+							.search-form-order-wrap__popup.active
 								form.search-form-order
 									input(type='text', placeholder='Search')
 
@@ -390,7 +352,7 @@ block content
 											.cat-filter__icon
 												img(src='/assets/img/avocado.svg', alt='')
 											.cat-filter__text Lorem
-						.page-mob-profile
+						.page-mob-profile.active
 							.page-mob-profile__content
 								.page-mob-profile__photo
 									.page-mob-profile__photo-icon
@@ -544,3 +506,44 @@ block content
 									span.catalog-list__btn-text Add
 				.catalog-magnit-btn
 					a.btn(href='#') Your order: $86
+
+block modal
+	.popup-wrap.popup-wrap_mob-bot(style="width: 680px;")
+		.popup
+			.popup__close
+				+svg('ic-close-grad','ic-close-grad', '32', '32')
+
+			.popup__content
+				form.check-food-wrap
+					.check-food
+						.prod-check-list
+							-
+								var list=[
+									{img:'burger1.png', status:'active'},
+									{img:'burger2.png', status:'active'},
+									{img:'burger1.png', status:'active'},
+									{img:'burger2.png'},
+								]
+
+							each item, index in list
+								.prod-check
+									if(item.status)
+										input(type='checkbox', checked='checked', id="prod"+index)
+									else
+										input(type='checkbox', id="prod"+index)
+
+									label.prod-check__label(for='prod'+index)
+										.prod-check__mark
+											+svg('ic-check','ic-check', '35', '26')
+
+										.prod-check__img
+											img(src='assets/img/'+item.img, alt='')
+							
+						.check-food__title Burger party
+
+						.check-food__price $ 25,99
+
+						.check-food__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis, augue enim in felis leo blandit consequat.
+
+						.check-food__btn
+							button.btn(type='submit') Add $ 25,98
