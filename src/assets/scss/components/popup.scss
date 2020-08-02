@@ -93,6 +93,20 @@
 	}
 
 	.product{margin: 0 -8px;}
+
+	.tabs-page-profile{
+		.tabs-page{
+			&__item{
+				width: 50%;
+			}
+		}
+	}
+
+	.tabs-page{
+		margin: -50px -40px -20px;
+
+		&__content-item{padding-bottom: 40px;}
+	}
 }
 
 @media (max-width: 767px) {
@@ -237,6 +251,25 @@
 		}
 
 		.cat-coupon__title{text-align: left;}
+
+		.tabs-page{margin: 0 -20px;}
+	}
+
+	.tabs-page-profile{
+		padding-left: 20px;
+		padding-right: 20px;
+
+		.profile{
+			padding-left: 0;
+			padding-right: 0;
+			
+			&__top{padding-top: 15px;}
+
+			&__author{
+				border-radius: 0;
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	html[dir="rtl"]{

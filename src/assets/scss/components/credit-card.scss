@@ -112,12 +112,81 @@
 	}
 }
 
+.credit-list-wrap{
+	padding-top: 37px;
+
+	&__head{
+		@include font(normal, 500, 2rem, 1.2, $color-text);
+		margin-bottom: 32px;
+	}
+
+	&__btn{
+		text-align: center;
+		margin-top: 32px;
+	}
+}
+
+.credit-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -8px;
+	margin-right: -34px;
+}
+
+.credit-item{
+	display: inline-block;
+	width: 260px;
+	height: 160px;
+	border-radius: 12px;
+	background-image: url(/assets/img/bg-credit-card.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	box-shadow: 0px 12px 20px rgba(171, 171, 171, 0.25);
+	margin: 8px;
+
+	&_empty{
+		padding: 20px;
+		position: relative;
+	}
+
+	&__title{
+		@include font(normal, 500, 1rem, 1.2, $color-red);
+	}
+
+	&__add{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: #ffe2ec;
+		cursor: pointer;
+		position: absolute;
+		@include top-center;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		transition: all 0.3s ease 0s;
+
+		.icon{fill: $color-red;}
+	}
+
+	&__add:hover{background: #fbccdc;}
+}
+
 html[dir="rtl"]{
 	.credit-card-type{
 		&__item:not(:last-child){
 			margin-right: 0;
 			margin-left: 16px;
 		}
+	}
+
+	.credit-list{
+		margin-right: -8px;
+		margin-left: -34px;
 	}
 }
 
@@ -145,5 +214,44 @@ html[dir="rtl"]{
 
 	.credit-card-type{
 		margin-bottom: 27px;
+	}
+
+	.credit-list-wrap{
+		padding-top: 0;
+		padding-bottom: 80px;
+	}
+
+	.credit-list{
+		justify-content: center;
+		margin-left: -6px;
+		margin-right: -6px;
+	}
+
+	.credit-item{
+		width: 335px;
+		height: 200px;
+		box-shadow: 0px 12px 20px rgba(171, 171, 171, 0.25);
+
+		&_empty{
+			box-shadow: none;
+			border: 2px dashed #c4c4c4;
+			background: #fff;
+		}
+
+		&__add{
+			width: 70px;
+			height: 70px;
+			background: #faf9f9;
+
+			.icon{
+				width: 26px;
+				height: 26px;
+				fill: #acacac;
+			}
+		}
+
+		&__add:hover{background: #e5e3e3;}
+
+		&__title{display: none;}
 	}
 }
