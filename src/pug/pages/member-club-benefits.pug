@@ -1,7 +1,7 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Join our members club';
+	- var title = 'Choose yor benefits';
 	- var shadow = true;
 	- var modal = true;
 
@@ -521,18 +521,84 @@ block modal
 					|back
 
 				.popup__head
-					.h1 Join our members club
-					.popup__text Just join us and start collecting coins
+					.h1 Choose yor benefits
+					.popup__text Create your best service experience with us
 
 			.popup__content
-				.member-club
-					.member-club__img
-						img(src="assets/img/member-club.svg", alt="")
+				.pricing
+					.pricing__content
+						.pricing__list
+							.pricing-item
+								.pricing-item__head
+									.pricing-item-info
+										.pricing-item-info__img
+											img(src="assets/img/box.svg", alt="")
 
-					.member-club__btn
+										.pricing-item-info__content
+											.pricing-item-info__name Delivery system
+											.pricing-item-info__price $2.56<span class="pricing-item-info__currency">/per month</span>
+												span.pricing-item-info__old-price $8,99
+
+									.input-check.input-check_circle.input-check_big
+										input#pay1(type='checkbox')
+										label.input-check__label(for='pay1')
+											span.input-check__mark
+												+svg('ic-check','ic-check', '17', '13')
+
+										span.input-check__line
+
+								.pricing-item__content
+									ul
+										li Lorem ipsum dolor sit amet, consectetur adipiscing elit
+										li Tempor quis tempus facilisis sapien
+
+							.pricing-item
+								.pricing-item__head
+									.pricing-item-info
+										.pricing-item-info__img
+											img(src="assets/img/shopping-cart.svg", alt="")
+
+										.pricing-item-info__content
+											.pricing-item-info__name Products
+											.pricing-item-info__price $8,99
+
+									.input-check.input-check_circle.input-check_big
+										input#pay2(type='checkbox', checked="checked")
+										label.input-check__label(for='pay2', checked="checked")
+											span.input-check__mark
+												+svg('ic-check','ic-check', '17', '13')
+										span.input-check__line
+
+								.pricing-item__content
+									ul
+										li Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+							.pricing-item
+								.pricing-item__head
+									.pricing-item-info
+										.pricing-item-info__img
+											img(src="assets/img/box.svg", alt="")
+
+										.pricing-item-info__content
+											.pricing-item-info__name Products
+											.pricing-item-info__price $120
+												span.pricing-item-info__old-price $8,99
+
+									.input-check.input-check_circle.input-check_big
+										input#pay3(type='checkbox')
+										label.input-check__label(for='pay3')
+											span.input-check__mark
+												+svg('ic-check','ic-check', '17', '13')
+										span.input-check__line
+
+								.pricing-item__content
+									ul
+										li Lorem ipsum dolor sit amet, consectetur adipiscing elit
+										li Tempor quis tempus facilisis sapien
+
+					.pricing__btn
 						a.btn(href="#")
-							span Join club
-							+svg('ic-arrow-right','ic-arrow-right', '16', '12')
+							span Pay $ 80,99
 
 
 

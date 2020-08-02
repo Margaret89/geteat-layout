@@ -107,6 +107,11 @@
 
 		&__content-item{padding-bottom: 40px;}
 	}
+
+	.pricing{
+		max-width: 500px;
+		margin: 0 auto;
+	}
 }
 
 @media (max-width: 767px) {
@@ -262,6 +267,8 @@
 				padding-bottom: 20px;
 			}
 		}
+
+		.pricing{margin-top: -15px;}
 	}
 
 	.tabs-page-profile{

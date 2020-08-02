@@ -16,6 +16,8 @@
 		left: 0;
 	}
 
+	&__content-wrap.end::after{display: none;}
+
 	&__sect{margin-bottom: 12px;}
 
 	&__top{
