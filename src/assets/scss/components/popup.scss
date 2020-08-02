@@ -105,12 +105,21 @@
 		border-radius: 0;
 
 		&_mob-bot{
-			height: calc(100vh - 68px);
+			height: auto;
+			max-height: calc(100vh - 68px);
 			margin-top: 68px;
 			overflow-y: auto;
 			border-radius: 12px 12px 0 0;
+			top: auto;
+			bottom: 0;
+			transform: none;
 
-			.popup{height: 100vh;}
+			.popup{height: 100%;}
+
+			.popup__close{
+				top: 16px;
+				right: 20px;
+			}
 		}
 	}
 	
@@ -231,6 +240,13 @@
 	}
 
 	html[dir="rtl"]{
+		.popup-wrap{
+			&_mob-bot .popup__close{
+				right: auto;
+				left: 20px;
+			}
+		}
+
 		.popup{
 			h1,
 			.h1,
