@@ -1,0 +1,27 @@
+/*-------------- member-club -----------------*/
+.member-club{
+	text-align: center;
+
+	&__btn{margin-top: 32px;}
+}
+
+@media (max-width: 767px) {
+	.member-club{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		margin-top: -15px;
+
+		&__img{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: calc(100% - 68px);
+		}
+
+		&__img img{width: 300px;}
+
+		&__btn{margin-top: 20px;}
+	}
+}
