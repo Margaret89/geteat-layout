@@ -77,6 +77,12 @@
 
 	&__btn .btn{
 		min-width: 180px;
+		text-transform: uppercase;
+	}
+
+	&__btn_jc{
+		display: flex;
+		justify-content: space-between;
 	}
 
 	&__bottom{
@@ -210,6 +216,22 @@ html[dir="rtl"]{
 		&__field{margin-bottom: 25px;}
 		&__field-wrap{align-items: flex-end;}
 		&__field-wrap &__field{width: calc(33.33% - 16px);}
+
+		&__btn_jc{justify-content: center;}
+
+		&_bg-mob &__content{
+			padding: 20px 20px 0;
+			background: #faf9f9;
+			margin-bottom: 20px;
+		}
+
+		&_bg-mob &__content input[type="text"],
+		&_bg-mob &__content input[type="email"],
+		&_bg-mob &__content input[type="date"]{
+			background: #fff;
+		}
+
+		&__data &__field:last-child{margin-bottom: 0;}
 	}
 
 	.credit-card-type{

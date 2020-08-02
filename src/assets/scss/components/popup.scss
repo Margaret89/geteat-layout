@@ -253,6 +253,15 @@
 		.cat-coupon__title{text-align: left;}
 
 		.tabs-page{margin: 0 -20px;}
+
+		.credit-card-wrap{
+			&_auto{height: auto;}
+	
+			.credit-card{
+				height: auto;
+				padding-bottom: 20px;
+			}
+		}
 	}
 
 	.tabs-page-profile{
