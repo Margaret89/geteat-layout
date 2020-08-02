@@ -38,4 +38,16 @@ block content
 					li
 						a(href=page.href,)= page.name
 
+			h2(style="margin-top: 20px") New pages
+			- 
+				var pagelist = [
+					{href: 'food-menu-closed.html',name:'Food menu with timer closed'},
+					{href: 'food-menu-open.html',name:'Food menu with panel open'},
+					
+				];
+			ul
+				each page in pagelist
+					li
+						a(href=page.href,)= page.name
+
 

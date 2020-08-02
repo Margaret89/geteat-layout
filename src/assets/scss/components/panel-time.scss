@@ -1,0 +1,48 @@
+/*-------------- panel-time -----------------*/
+.panel-time{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background: #fff url(/assets/img/bg-panel-time.svg) repeat-x 0 0;
+	border-radius: 12px;
+	padding: 4px 16px;
+	margin-bottom: 12px;
+
+	&__info,
+	&__timer{
+		display: flex;
+		align-items: center;
+	}
+
+	&__img{margin-right: 20px;}
+	&__info{margin-right: 20px;}
+
+	&__title{
+		@include font(normal, 500, 1rem, 1.2, #4a4a4a);
+	}
+
+	&__label{
+		@include font(normal, 500, 0.875rem, 1.2, #777);
+		margin-right: 15px;
+	}
+}
+
+html[dir="rtl"]{
+	.panel-time{
+		&__img{
+			margin-right: 0;
+			margin-left: 20px;
+		}
+
+		&__info{
+			margin-right: 0;
+			margin-left: 20px;
+		}
+
+		&__label{
+			margin-right: 0;
+			margin-left: 15px;
+		}
+	}
+}

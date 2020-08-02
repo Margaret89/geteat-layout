@@ -1,0 +1,58 @@
+/*-------------- timer-----------------*/
+.timer{
+	display: flex;
+	align-items: center;
+
+	&__sect{
+		display: flex;
+		margin: 0 5px;
+		position: relative;
+	}
+
+	&__sect:not(:last-child):after{
+		content: ':';
+		display: inline-block;
+		vertical-align: middle;
+		width: 10px;
+		@include font(normal, 500, 1rem, 125rem, #7a7a7a);
+		text-align: center;
+		position: absolute;
+		@include top-center;
+		left: 100%;
+	}
+
+	&__item{
+		display: inline-block;
+		min-width: 16px;
+		height: 22px;
+		padding: 0 2px;
+		background: #fff;
+		border-radius: 4px;
+		border: 1px solid #e9e9e9;
+		@include font(normal, normal, 0.875rem, 1.25rem, #4a4a4a);
+		text-align: center;
+	}
+
+	&__item:not(:last-child){margin-right: 2px;}
+
+	&_big &__item{
+		min-width: 20px;
+		height: 28px;
+		font-size: 1rem;
+		line-height: 1.625rem;
+	}
+}
+
+html[dir="rtl"]{
+	.countdown{
+		&__sect:not(:last-child):after{
+			left: auto;
+			right: 100%;
+		}
+
+		&__item:not(:last-child){
+			margin-right: 0;
+			margin-left: 2px;
+		}
+	}
+}
