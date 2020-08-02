@@ -1,0 +1,225 @@
+/*-------------- food-offer -----------------*/
+.food-offer{
+	max-width: 565px;
+	margin: 0 auto;
+
+	&__content-wrap{position: relative;}
+
+	&__content-wrap::after{
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 120px;
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__sect{margin-bottom: 12px;}
+
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: -3px;
+	}
+
+	&__info{margin-right: 15px;}
+
+	&__title{
+		@include font(normal, 500, 1.25rem, 1.2, $color-text);
+		margin-bottom: 8px;
+	}
+
+	&__text{
+		@include font(normal, normal, 1rem, 1.2, $color-grey);
+	}
+
+	&__status{
+		@include font(normal, normal, 1rem, 1.2, $color-red);
+	}
+
+	&__btn{
+		text-align: center;
+		margin-top: 32px;
+	}
+
+	&__content{
+		max-height: calc(70vh - 233px);
+		overflow-y: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&__head{
+		@include font(normal, 500, 2rem, 1.2, $color-text);
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.food-offer-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
+
+	.food-offer-item{margin: 10px;}
+}
+
+.food-offer-item{
+	text-align: center;
+
+	&__label{
+		display: inline-block;
+		vertical-align: top;
+		width: 160px;
+		height: 140px;
+		border-radius: 24px;
+		padding: 8px 15px;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.3s ease 0s;
+	}
+
+	input[type=checkbox]{display: none;}
+
+	&__mark{
+		display: inline-block;
+		width: 24px;
+		height: 18px;
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		opacity: 0;
+		transition: all 0.2s ease 0s;
+
+		.icon{
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			height: 100%;
+			fill: $color-green;
+		}
+	}
+
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 80px;
+		margin-bottom: 8px;
+	}
+
+	&__img img{max-height: 100%;}
+
+	&__name{
+		@include font(normal, normal, 1.125rem, 1.2, #4a4a4a);
+		margin-bottom: 3px;
+	}
+
+	&__name:last-child{margin-bottom: 0;}
+
+	&__price{
+		@include font(normal, normal, 0.875rem, 1.2, $color-grey);
+	}
+	
+	input[type=checkbox]:checked + &__label{background: #faf9f9;}
+	input[type=checkbox]:checked + &__label &__mark{opacity: 1;}
+}
+
+html[dir="rtl"]{
+	.food-offer{
+		&__info{
+			margin-right: 0;
+			margin-left: 15px;
+		}
+	}
+
+	.food-offer-item{
+		&__mark{
+			right: auto;
+			left: 12px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.food-offer-list{
+		overflow-x: auto;
+		flex-wrap: nowrap;
+		margin-left: -20px;
+		margin-right: -20px;
+	
+		.food-offer{margin: 12px;}
+	}
+
+	.food-offer{
+		max-width: 100%;
+
+		&__head{
+			font-size: 1.5rem;
+			text-align-last: left;
+			margin-top: -40px;
+		}
+
+		&__content{
+			max-height: none;
+			height: auto;
+			overflow: visible;
+			padding: 0;
+		}
+
+		&__content-wrap::after{display: none;}
+		&__btn{margin-top: 15px;}
+		&__top{margin-bottom: 0;}
+
+		&__title{font-size: 1rem;}
+		&__text{font-size: 0.875rem;}
+		&__status{font-size: 0.875rem;}
+		&__head{margin-bottom: 6px;}
+
+		&__sect:not(:last-child){
+			border-bottom: 1px dashed #dde1e7;
+			padding-bottom: 15px;
+		}
+	}
+
+	.food-offer-item{
+		margin-top: 0;
+		margin-bottom: 0;
+		height: auto;
+
+		&__img{
+			height: 60px;
+		}
+
+		&__name{
+			font-size: 1rem;
+		}
+
+		&__label{
+			width: 125px;
+			height: auto;
+			// min-height: 110px;
+			padding: 8px;
+		}
+
+		&__mark{
+			width: 18px;
+			height: 14px;
+			top: 8px;
+			right: 8px;
+		}
+	}
+		
+	html[dir="rtl"]{
+		.food-offer{
+			&__mark{
+				right: auto;
+				left: 8px;
+			}
+		}
+	}
+}
