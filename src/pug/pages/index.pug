@@ -5,8 +5,14 @@ block variables
 	- 
 		var pagelist = [
 			{href: 'food-menu.html',name:'Food menu'},
-			{href: 'food-menu-popup.html',name:'Food menu popup + order'},
 			{href: 'food-menu-cards.html',name:'Food menu cards'},
+		];
+
+	- 
+		var pagelist_old = [
+			//- {href: 'food-menu.html',name:'Food menu'},
+			//- {href: 'food-menu-popup.html',name:'Food menu popup + order'},
+			//- {href: 'food-menu-cards.html',name:'Food menu cards'},
 			{href: 'food-menu-mobile-order.html',name:'Food menu mobile order'},
 			{href: 'side-menu-mobile.html',name:'Side menu mobile'},
 			{href: 'login.html',name:'Login'},
@@ -35,6 +41,13 @@ block content
 			h1 Content
 			ul
 				each page in pagelist
+					li
+						a(href=page.href,)= page.name
+
+			br
+			br
+			ul
+				each page in pagelist_old
 					li
 						a(href=page.href,)= page.name
 

@@ -26,3 +26,104 @@ mixin select(data)
 		.select__option
 			each item in data.list
 				.select__param(class=item.status?'active':'')= item.text
+
+mixin header(data)
+	header.order-header.brand-header
+		.container
+			.order-header__content
+				.order-header__logo
+					img(src="/assets/img/logo-white.svg", alt="")
+
+				.order-header__info
+					.order-header__time
+						.dropdown.hover
+							span.dropdown__icon.desktop-toolbar-icon
+								+svg('ic-time','ic-time ic-white', '24', '24')
+								
+							.dropdown__head Today 10:00-23:00
+								span.dropdown__arr
+									+svg('ic-arrow-down','ic-arrow-down', '10', '7')
+							.dropdown__list.brand-r-cards
+								-
+									var times=[
+										'00:00 - 23:59 Sunday',
+										'00:00 - 23:59 Monday',
+										'00:00 - 23:59 Tuesday',
+										'00:00 - 23:59 Wednesday',
+										'00:00 - 23:59 Thursday',
+										'00:00 - 23:59  Friday',
+										'00:00 - 23:59 Saturday',
+										]
+								each time in times
+									.dropdown__item.brand-text= time
+
+					.order-header__delevery
+						.order-header__delevery-title.pointer
+							.desktop-toolbar-icon
+								+svg('ic-address','ic-address', '16', '16')
+							| Delivery areas
+
+					.order-header__contact
+						a.order-header__phone(href='tel:0552226266')
+							span.desktop-toolbar-icon
+								+svg('ic-calls-stroke','ic-calls-stroke', '16', '16')
+							span.order-header__phone-number 055 22 26 266
+					
+					.order-header-icons
+						.order-header-icons__item
+							img(src='/assets/img/kosher.svg')
+
+						.order-header-icons__item
+							img(src='/assets/img/wheelchair-white.svg')
+
+							.order-header-icons__popup-wrap
+								.order-header-icons__popup
+									-
+										var icons=[
+											{icon:'ic-accessibility-wc', status:'active'},
+											{icon:'ic-deaf', status:'active'},
+											{icon:'ic-accessibility', status:'active'},
+											{icon:'ic-park'},
+										]
+									each icon in icons
+										.order-header-icons__ic(class=icon.status=='active'?'active':'')
+											+svg(icon.icon,icon.icon, '18', '17')
+
+					.header-search
+						.header-search__btn((click)='desktopSearchActive = true')
+							+svg('ic-search','ic-search ic-stroke', '13', '13')
+
+							.header-search__count.brand-secondary-bg 3
+
+						.header-search__content(class=data.search=='true'?'active':'')
+							form.search-form-order
+								input(type='text' placeholder="Search")
+								button(type='submit')
+									+svg('ic-search','ic-search ic-stroke', '13', '13')
+
+							.cat-filter
+								.cat-filter__content
+									-
+										var filters=[
+											{icon:'broccoli.svg', text:'Vegeterian', status:'active'},
+											{icon:'avocado.svg', text:'Vegan', status:'active'},
+											{icon:'gluten.svg', text:'More'},
+											{icon:'avocado.svg', text:'Vegan'},
+											{icon:'gluten.svg', text:'Ipsum', status:'active'},
+											{icon:'avocado.svg', text:'Lorem'},
+											{icon:'broccoli.svg', text:'Vegeterian'},
+											{icon:'gluten.svg', text:'More'},
+										]
+									each filter in filters
+										.cat-filter__item.brand-r-cards(class=filter.status=='active'?'active':'')
+											.cat-filter__link
+												.cat-filter__icon
+													img(src="/assets/img"+filter.icon, alt="")
+													if(filter.status=='active')
+														+svg('ic-close-thin','ic-close-thin', '26', '26')
+													
+												.cat-filter__text= filter.text
+
+							.header-search__close.brand-primary-bg
+								+svg('ic-close','ic-close', '16', '16')
+

@@ -2,78 +2,61 @@ extends ../layout/main
 
 block variables
 	- var title = 'Food menu';
+	- var header = {search:'true'}
 
 block content
 	section.container
 		.d-none.d-md-block
 			.new-order
 				.new-order__main
-					include ../components/top-panel
-
 					.new-order__content
 						.catalog
 							include ../components/catalog-menu
 
 							.catalog__content
-								section.catalog__action
-									.cat-filter
-										.cat-filter__item.active
-											.cat-filter__text All
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/broccoli.svg', alt='')
-											.cat-filter__text Vegeterian
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/avocado.svg', alt='')
-											.cat-filter__text Vegan
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/gluten.svg', alt='')
-											.cat-filter__text Gluten free
-										.cat-filter__more
-											.cat-filter__more-icon
-												+svg('ic-arrow-down','ic-arrow-down', '12', '8')
-												+svg('ic-close-thin','ic-close-thin', '12', '12')
+								.notice-filter-wrap
+									.notice-filter
+										.notice-filter__edit
+											+svg('ic-pencil','ic-pencil', '10', '10')
 
-											.cat-filter__sub
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/broccoli.svg', alt='')
-													.cat-filter__text Vegeterian
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/avocado.svg', alt='')
-													.cat-filter__text Vegan
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/gluten.svg', alt='')
-													.cat-filter__text More
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/avocado.svg', alt='')
-													.cat-filter__text Vegan
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/gluten.svg', alt='')
-													.cat-filter__text Ipsum
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/broccoli.svg', alt='')
-													.cat-filter__text Vegeterian
-												.cat-filter__item
-													.cat-filter__icon
-														img(src='/assets/img/avocado.svg', alt='')
-													.cat-filter__text Lorem
-									.view
-										.view__item.active
-											+svg('ic-view-line','ic-view-line', '20', '14')
+										.notice-filter__text.brand-danger-text
+											span Showing: Vegeterian, Vegan, Gluten free
 
-										.view__item
-											+svg('ic-view-tile','ic-view-tile', '14', '14')
-							
+										.notice-filter__close.brand-danger-fill
+											+svg('ic-close','ic-close', '10', '10')
+
 								.cat-category-wrap
 									.cat-category-wrap__content
+										section.cat-category-action
+											.working-time.working-time_red
+												img.working-time__bg(src='/assets/img/wt-wave-white.png')
+
+												.working-time__info
+													.working-time__img
+														img(src='/assets/img/tablet_close.svg')
+													.working-time__label We’re closed
+													
+												.countdown
+													.countdown__label.brand-text Opens in:
+
+													.countdown__content
+														.countdown__sect
+															.countdown__item 0
+															.countdown__item 0
+														.countdown__sect
+															.countdown__item 2
+															.countdown__item 3
+														.countdown__sect
+															.countdown__item 0
+															.countdown__item 3
+
+											.view
+												.view__item.active
+													+svg('ic-view-line','ic-view-line', '20', '14')
+
+												.view__item
+													+svg('ic-view-tile','ic-view-tile', '14', '14')
+										
 										section.cat-notice
 											.cat-notice__close
 												+svg('ic-close','ic-close', '10', '10')
@@ -92,9 +75,9 @@ block content
 											.catalog-list.catalog-list_tile
 												-
 													var list=[
-														{img:'steak-big.jpg', new:'true', name:'Steak with vegetables', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
-														{img:'vegan-big.jpg', name:'Vegan joy', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
-														{img:'soup-big.jpg', name:'Red soup', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
+														{img:'pizza1.png', new:'true', name:'Ham Pizza', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true', size:'S'},
+														{img:'pizza2.png', name:'California', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
+														{img:'pizza3.png', name:'Ham Pizza', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
 													];
 												each item in list
 													.catalog-list__item(class=item.status=='inactive'?'inactive':'')
@@ -117,14 +100,10 @@ block content
 																	if(item.old_price)
 																		.catalog-list__price-old= item.old_price
 															.catalog-list__bottom
-																.catalog-list-icon
-																	.catalog-list-icon__item(class=item.ic_gluten?'catalog-list-icon__item_no-bg':'')
-																		if(item.ic_gluten)
-																			img(src='/assets/img/gluten.svg', alt='')
-																		if(item.ic_broccoli)
-																			img(src='/assets/img/broccoli.svg', alt='')
-																		if(item.ic_avocado)
-																			img(src='/assets/img/avocado.svg', alt='')
+																.catalog-list-size
+																	.catalog-list-size__item(class=item.size=='S'?'active':'') S
+																	.catalog-list-size__item(class=item.size=='M'?'active':'') M
+																	.catalog-list-size__item(class=item.size=='L'?'active':'') L
 
 																a.catalog-list__btn(href='#')
 																	+svg('ic-plus','ic-plus', '12', '12')
@@ -138,9 +117,9 @@ block content
 
 												-
 													var list=[
-														{img:'steak-big.jpg', new:'true', name:'Steak with vegetables', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
-														{img:'vegan-big.jpg', name:'Vegan joy', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
-														{img:'soup-big.jpg', name:'Red soup', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
+														{img:'pizza1.png', new:'true', name:'Ham Pizza', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
+														{img:'pizza2.png', name:'California', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
+														{img:'pizza3.png', name:'Ham Pizza', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
 													];
 												each item in list
 													.catalog-list__item(class=item.status=='inactive'?'inactive':'')
@@ -163,14 +142,10 @@ block content
 																	if(item.old_price)
 																		.catalog-list__price-old= item.old_price
 															.catalog-list__bottom
-																.catalog-list-icon
-																	.catalog-list-icon__item(class=item.ic_gluten?'catalog-list-icon__item_no-bg':'')
-																		if(item.ic_gluten)
-																			img(src='/assets/img/gluten.svg', alt='')
-																		if(item.ic_broccoli)
-																			img(src='/assets/img/broccoli.svg', alt='')
-																		if(item.ic_avocado)
-																			img(src='/assets/img/avocado.svg', alt='')
+																.catalog-list-size
+																	.catalog-list-size__item(class=item.size=='S'?'active':'') S
+																	.catalog-list-size__item(class=item.size=='M'?'active':'') M
+																	.catalog-list-size__item(class=item.size=='L'?'active':'') L
 
 																a.catalog-list__btn(href='#')
 																	+svg('ic-plus','ic-plus', '12', '12')
@@ -187,9 +162,9 @@ block content
 											.catalog-list.catalog-list_tile
 												-
 													var list=[
-														{img:'steak-big.jpg', new:'true', name:'Steak with vegetables', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
-														{img:'vegan-big.jpg', name:'Vegan joy', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
-														{img:'soup-big.jpg', name:'Red soup', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
+														{img:'pizza1.png', new:'true', name:'Ham Pizza', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
+														{img:'pizza2.png', name:'California', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
+														{img:'pizza3.png', name:'Ham Pizza', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
 													];
 												each item in list
 													.catalog-list__item(class=item.status=='inactive'?'inactive':'')
@@ -212,14 +187,10 @@ block content
 																	if(item.old_price)
 																		.catalog-list__price-old= item.old_price
 															.catalog-list__bottom
-																.catalog-list-icon
-																	.catalog-list-icon__item(class=item.ic_gluten?'catalog-list-icon__item_no-bg':'')
-																		if(item.ic_gluten)
-																			img(src='/assets/img/gluten.svg', alt='')
-																		if(item.ic_broccoli)
-																			img(src='/assets/img/broccoli.svg', alt='')
-																		if(item.ic_avocado)
-																			img(src='/assets/img/avocado.svg', alt='')
+																.catalog-list-size
+																	.catalog-list-size__item(class=item.size=='S'?'active':'') S
+																	.catalog-list-size__item(class=item.size=='M'?'active':'') M
+																	.catalog-list-size__item(class=item.size=='L'?'active':'') L
 
 																a.catalog-list__btn(href='#')
 																	+svg('ic-plus','ic-plus', '12', '12')
@@ -236,7 +207,6 @@ block content
 											+svg('ic-crown','ic-crown ic-white', '12', '12')
 									.cat-order-user__info
 										.cat-order-user__head Hello Linda
-										.cat-order-user__text 1356 VIP club points
 								.dot-menu
 									.dot-menu__icon
 										span
@@ -300,11 +270,12 @@ block content
 													|Great! You got a 5% discount
 													
 											button.btn(type='submit') Pay $ 12,34
-											.cat-history__copyright
+											.cat-history__copyright.geteat-copy
 												| Powered by 
 												img(src='/assets/img/logo.svg', alt='')
 					
 			
+				
 		.d-md-none
 			header.header
 				span.ic-hamburger
@@ -330,50 +301,26 @@ block content
 										+svg('ic-search','ic-search ic-stroke', '13', '13')
 
 								.cat-filter
-									.cat-filter__item.active
-										.cat-filter__text All
-									.cat-filter__item
-										.cat-filter__icon
-											img(src='/assets/img/broccoli.svg', alt='')
-										.cat-filter__text Vegeterian
-									.cat-filter__item
-										.cat-filter__icon
-											img(src='/assets/img/avocado.svg', alt='')
-										.cat-filter__text Vegan
-									.cat-filter__more
-										.cat-filter__more-icon.active
-											+svg('ic-arrow-down','ic-arrow-down', '12', '8')
-											+svg('ic-close-thin','ic-close-thin', '12', '12')
+									-
+										var list=[
+											{icon:'broccoli.svg', text:'Vegeterian', status:'active'},
+											{icon:'avocado.svg', text:'Vegan', status:'active'},
+											{icon:'gluten.svg', text:'More'},
+											{icon:'avocado.svg', text:'Vegan'},
+											{icon:'gluten.svg', text:'Ipsum', status:'active'},
+											{icon:'avocado.svg', text:'Lorem'},
+											{icon:'broccoli.svg', text:'Vegeterian'},
+											{icon:'gluten.svg', text:'More'},
+										]
+									.cat-filter__content
+										each item in list
+											.cat-filter__item(class=item.status?'active':'')
+												.cat-filter__link
+													.cat-filter__icon
+														img(src='/assets/img/'+item.icon, alt='')
+													.cat-filter__text= item.text
 
-									.cat-filter__sub.active
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/broccoli.svg', alt='')
-											.cat-filter__text Vegeterian
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/avocado.svg', alt='')
-											.cat-filter__text Vegan
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/gluten.svg', alt='')
-											.cat-filter__text More
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/avocado.svg', alt='')
-											.cat-filter__text Vegan
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/gluten.svg', alt='')
-											.cat-filter__text Ipsum
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/broccoli.svg', alt='')
-											.cat-filter__text Vegeterian
-										.cat-filter__item
-											.cat-filter__icon
-												img(src='/assets/img/avocado.svg', alt='')
-											.cat-filter__text Lorem
+											
 						.page-mob-profile.active
 							.page-mob-profile__content
 								.page-mob-profile__photo
@@ -400,15 +347,16 @@ block content
 				
 				include ../components/catalog-menu
 
-				section.catalog-list.catalog-list_tile
+				//- section.catalog-list.catalog-list_tile
+				section.catalog-list
 					.catalog-list__item
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/steak-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza1.png');")
 							.catalog-list__new
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Steak with vegetables
+										a(href='#') Ham Pizza
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 5,99
 											.catalog-list__price-old $ 7,99
@@ -417,60 +365,56 @@ block content
 									.catalog-list__price-def $ 5,99
 									.catalog-list__price-old $ 7,99
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item.catalog-list-icon__item_no-bg
-										img(src='/assets/img/gluten.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item S
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
 					.catalog-list__item
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/vegan-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza2.png');")
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Vegan joy
+										a(href='#') California
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 7,59
 									.catalog-list__text Lorem ipsum dolor sit amet, consectetur adipiscing elit
 								.catalog-list__price
 									.catalog-list__price-def $ 7,59
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item
-										img(src='/assets/img/broccoli.svg', alt='')
-									.catalog-list-icon__item
-										img(src='/assets/img/avocado.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item S
+									.catalog-list-size__item M
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
 					.catalog-list__item
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/soup-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza3.png');")
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Red soup
+										a(href='#') Ham Pizza
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 5,99
 									.catalog-list__text Lorem ipsum dolor sit amet, consectetur adipiscing elit
 								.catalog-list__price
 									.catalog-list__price-def $ 5,99
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item.catalog-list-icon__item_no-bg
-										img(src='/assets/img/gluten.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item S
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
 					.catalog-list__item
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/steak-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza1.png');")
 							.catalog-list__new
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Steak with vegetables
+										a(href='#') Ham Pizza
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 5,99
 											.catalog-list__price-old $ 7,99
@@ -479,49 +423,45 @@ block content
 									.catalog-list__price-def $ 5,99
 									.catalog-list__price-old $ 7,99
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item.catalog-list-icon__item_no-bg
-										img(src='/assets/img/gluten.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item L
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
 					.catalog-list__item.inactive
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/vegan-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza2.png');")
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Vegan joy
+										a(href='#') California
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 7,59
 									.catalog-list__text Lorem ipsum dolor sit amet, consectetur adipiscing elit
 								.catalog-list__price
 									.catalog-list__price-def $ 7,59
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item
-										img(src='/assets/img/broccoli.svg', alt='')
-									.catalog-list-icon__item
-										img(src='/assets/img/avocado.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item S
+									.catalog-list-size__item M
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
 					.catalog-list__item.inactive
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/soup-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza3.png');")
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Red soup
+										a(href='#') Ham Pizza
 										.catalog-list__price-tile
 											.catalog-list__price-def $ 5,99
 									.catalog-list__text Lorem ipsum dolor sit amet, consectetur adipiscing elit
 								.catalog-list__price
 									.catalog-list__price-def $ 5,99
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item.catalog-list-icon__item_no-bg
-										img(src='/assets/img/gluten.svg', alt='')
+								.catalog-list-size
+									.catalog-list-size__item S
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add

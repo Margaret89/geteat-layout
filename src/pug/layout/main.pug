@@ -9,8 +9,10 @@ html(lang='ru')
 		title #{title}
 
 	body
-		.wrapper(class=shadow?'blur':'')
-			include ./header
+		.wrapper.wrapper-pizza(class=shadow?'blur':'')
+			if(header)
+				+header(header)
+				
 			main
 				block header-ban
 				block breadcrumb

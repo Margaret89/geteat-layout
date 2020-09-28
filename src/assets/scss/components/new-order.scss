@@ -274,6 +274,7 @@
 
 	&__text{
 		@include font(normal, normal, 1rem, 1.2, $color-red);
+		margin-bottom: -5px;
 	}
 
 	&__close{

@@ -1,0 +1,12 @@
+/*-------------- pizza -----------------*/
+.wrapper-pizza{
+	.catalog-list{
+		&__img{background-size: contain;}
+	}
+
+	.catalog-list_tile{
+		.catalog-list__item{overflow: visible;}
+		.catalog-list__img{margin-top: -16px;}
+		.catalog-list__new{top: 16px;}
+	}
+}
