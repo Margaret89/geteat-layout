@@ -16,19 +16,3 @@
 	padding: 0;
 	list-style: none;
 }
-
-@mixin gradient-green{
-	background: linear-gradient(180deg, #47B26B 0%, #A2CC33 100%);
-}
-
-@mixin gradient-green-dark{
-	background: linear-gradient(180deg, #47B26B 0%, #A2CC33 100%);
-}
-
-@mixin gradient-orange{
-	background: linear-gradient(72.37deg, #F28F16 6.41%, #D60B52 95.11%);
-}
-
-@mixin gradient-orange-dark{
-	background: linear-gradient(72.37deg, #e08516 6.41%, #b50b46 95.11%);
-}

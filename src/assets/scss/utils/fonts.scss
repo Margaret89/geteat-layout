@@ -32,3 +32,37 @@
 	font-weight: 900;
 	font-style: normal;
 }
+
+/* Rubik */
+@font-face {
+	font-family: 'Rubik';
+	src: url('#{$path-fonts}/Rubik-Regular.eot');
+	src: url('#{$path-fonts}/Rubik-Regular.eot?#iefix') format('embedded-opentype'),
+	url('#{$path-fonts}/Rubik-Regular.woff2') format('woff2'),
+	url('#{$path-fonts}/Rubik-Regular.woff') format('woff'),
+	url('#{$path-fonts}/Rubik-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('#{$path-fonts}/Rubik-Medium.eot');
+	src: url('#{$path-fonts}/Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+	url('#{$path-fonts}/Rubik-Medium.woff2') format('woff2'),
+	url('#{$path-fonts}/Rubik-Medium.woff') format('woff'),
+	url('#{$path-fonts}/Rubik-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('#{$path-fonts}/Rubik-Black.eot');
+	src: url('#{$path-fonts}/Rubik-Black.eot?#iefix') format('embedded-opentype'),
+	url('#{$path-fonts}/Rubik-Black.woff2') format('woff2'),
+	url('#{$path-fonts}/Rubik-Black.woff') format('woff'),
+	url('#{$path-fonts}/Rubik-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}

@@ -4,16 +4,16 @@
 	width: 640px;
 	max-width: 90%;
 	border-radius: 12px;
-	box-shadow: 0px 12px 20px rgba(65, 65, 65, 0.25);
+	box-shadow: 0 12px 20px rgba(65, 65, 65, 0.25);
 	margin: 0 auto;
-	padding: 50px 40px 20px 40px;
+	padding: 50px 40px;
 	background: #fff;
 	position: fixed;
 	@include top-center;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-	z-index: 1005;
+	z-index: 1006;
 	overflow-y: auto;
 
 	&.full-height{
@@ -39,6 +39,11 @@
 		display: inline-block;
 		width: 32px;
 		height: 32px;
+		background: transparent;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		box-shadow: none;
 		position: absolute;
 		top: -27px;
 		right: -17px;
@@ -83,8 +88,6 @@
 	.pay-form{width: 81%;}
 	.pay-choose-form{width: 87%;}
 
-	
-
 	&__btn{
 		text-align: center;
 		margin-top: 30px;
@@ -92,7 +95,86 @@
 		z-index: 2;
 	}
 
+	&__back a{
+		color: white!important;
+	}
+
 	.product{margin: 0 -8px;}
+}
+
+geteat-client-popup {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+}
+
+.close-button {
+	background: $color-red;
+	box-shadow: 0 8px 16px hsla(0,0%,54.1%,.25);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	margin-left: -15px;
+	margin-top: -15px;
+
+	.ic-close {
+		fill: white;
+		height: 15px;
+		width: 15px;
+	}
+}
+
+.popup-wrap-pay{
+	// .form-site{
+	// 	input[type=date],
+	// 	input[type=email],
+	// 	input[type=text],
+	// 	input[type=tel],
+	// 	textarea {
+	// 		background: #fff;
+	// 	}
+	// }
+
+	.input-check{
+		&__mark {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.send-cutlery {
+	display: flex;
+
+	label {padding-left: 10px;}
+}
+
+html[dir="rtl"]{
+	.close-button {
+		margin-left: 0;
+		margin-right: -15px;
+	}
+
+	.send-cutlery {
+		label {
+			padding-left: 0;
+			padding-right: 10px;
+		}
+	}
+}
+
+.popup-wrap-sms{
+	padding: 5rem 4rem 0 4rem;
 }
 
 @media (max-width: 767px) {
@@ -103,6 +185,7 @@
 		max-height: 100%;
 		padding: 0;
 		border-radius: 0;
+		background: #fff;
 
 		&_mob-bot{
 			height: calc(100vh - 68px);
@@ -113,7 +196,9 @@
 			.popup{height: 100vh;}
 		}
 	}
-	
+
+	.popup-wrap-pay-choose{background: transparent;}
+
 	.popup{
 		height: 100%;
 
@@ -134,8 +219,8 @@
 		&__text{max-width: 100%;}
 
 		&__top{
-			min-height: 287px;
-			padding: 20px 20px 70px;
+			// min-height: 287px;
+			padding: 20px;
 			position: relative;
 		}
 
@@ -157,13 +242,13 @@
 		h2,
 		.h2{
 			color: #fff;
-			text-align: left;
 			margin-bottom: 0;
 		}
 
 		h2,
 		.h2{
 			font-size: 2.5rem;
+			text-align: left;
 		}
 
 		&__text{
@@ -173,9 +258,11 @@
 		}
 
 		&__content{
-			// height: 444px;
-			height: calc(100% - 300px);
-			padding: 56px 20px 20px;
+			background: #fff;
+			border-radius: 12px;
+			// height: calc(100% - 300px);
+			margin: 0 1rem 2rem 1rem;
+			padding: 20px;
 		}
 
 		.form-site-wrap,
@@ -224,16 +311,117 @@
 		.cat-history{
 			padding: 40px 20px;
 
-			.btn{margin-bottom: 20px;}
+			.btn{margin-bottom: 0;}
 		}
 
-		.cat-coupon__title{text-align: left;}
+		.cat-coupon__title{text-align: unset;}
+	}
+
+	.close-button {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 0;
+	}
+
+	.popup-wrap-sms{
+		display: flex;
+		flex-direction: column;
+		background: transparent;
+
+		.popup {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			&__content{background: transparent;}
+		}
+
+		.form-site__btn-label {
+			color: #fff;
+		}
+	}
+
+	.popup-wrap-delivery{
+		background: transparent;
+
+		.popup__content {
+			background: #fff;
+			// border-radius: 12px;
+			margin: 1rem;
+		}
+	}
+
+	.popup-delivery-area{
+
+		.filter{
+			flex-wrap: nowrap;
+			justify-content: center;
+			overflow-x: auto;
+			padding: 0 15px;
+			margin: 0 -20px;
+
+			&__item{box-shadow: 0px 5px 7px rgba(171, 171, 171, 0.25);}
+		}
+
+		.popup{
+			&__head{align-items: center;}
+		}
+	}
+
+	.popup-wrap-pay{
+		background: transparent;
+
+		.popup{
+			&__top {
+				min-height: unset;
+				padding: 20px;
+			}
+
+			&__content {
+				background: white;
+				border-radius: 12px;
+				margin: 0 1rem 2rem;
+				padding: 20px;
+			}
+		}
+
+		.card-check{
+			&__text {
+				text-align: left;
+			}
+
+			&__mark {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		.h1 {text-align: center;}
+	}
+
+	.popup-wrap_mob-bot .popup{
+		height: 100%;
+
+		&__head{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			min-height: 0;
+			margin-bottom: 20px;
+      padding: 20px;
+		}
+
+		&__head h1,
+		&__head .h1{
+			max-width: calc(100% - 45px);
+			color: #3c3c3b;
+		}
+
+		&__close{position: static;}
 	}
 
 	html[dir="rtl"]{
 		.popup{
-			h1,
-			.h1,
 			h2,
 			.h2,
 			&__text{
@@ -245,6 +433,12 @@
 					margin-right: 0;
 					margin-left: 10px;
 				}
+			}
+		}
+
+		.popup-wrap-pay{
+			.card-check{
+				&__text {text-align: right;}
 			}
 		}
 	}

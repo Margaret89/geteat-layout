@@ -1,4 +1,16 @@
 /*-------------- select -----------------*/
+.ui-dropdown-label-container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+  }
+  .ui-placeholder {
+	padding: 0 20px;
+  }
+
 .select{
 	width: 100%;
 	position: relative;
@@ -9,7 +21,8 @@
 		border: 1px solid transparent;
 		border-radius: 1.5rem;
 		@include font(normal, normal, 1rem, 3rem, #4a4a4a);
-		background: #faf9f9;
+		// background: #faf9f9;
+		background: unset!important;
 		padding: 0 50px 0 20px;
 		position: relative;
         text-overflow: ellipsis;
@@ -24,44 +37,47 @@
 	}
 
 	&__option{
-		display: none;
+		display: flex!important;
+		flex-direction: column;
 		background: #fff;
-		border-radius: 0 0 12px 12px;
+		border-radius: 12px!important;
 		max-height: 240px;
 		overflow-y: auto;
 		box-shadow: 0px 8px 12px rgba(187, 187, 187, 0.25);
-		padding: 5px 0;
-		position: absolute;
+		padding: 0;
+		position: absolute!important;
 		top: 100%;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
+		margin-top: 5px;
 		z-index: 10;
+ 		border-top: none!important;
 	}
 
 	&.open &__option{
 		display: block;
 	}
 
-	&__option::after{
-		content: '';
-		display: inline-block;
-		width: calc(100% - 48px);
-		height: 1px;
-		background: #e9e9e9;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-	}
+	// &__option::after{
+	// 	content: '';
+	// 	display: inline-block;
+	// 	width: calc(100% - 48px);
+	// 	height: 1px;
+	// 	background: #e9e9e9;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	margin: 0 auto;
+	// }
 
 	&__param{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		@include font(normal, normal, 1rem, 1.2, #777777);
-		padding: 8px 50px 8px 24px;
+		padding: 8px 20px 8px 24px;
 		cursor: pointer;
 		position: relative;
 	}
@@ -69,6 +85,11 @@
 	&__param.active,
 	&__param:hover{
 		color: $color-red;
+
+		.select__title,
+		.select__text {
+			color: $color-red;
+		  }
 	}
 
 	&__param.active::after{
@@ -116,6 +137,72 @@
 		box-shadow: 0px 8px 12px rgba(187, 187, 187, 0.25);
 		border-radius: 12px 12px 0 0;
 	}
+
+	.dropdown{
+		display: block;
+		padding: 0;
+	}
+
+	input{
+		border: none;
+		width: 100%;
+		font-size: 14px;
+	
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.select-menu {
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	overflow-x: hidden;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, .15);
+	z-index: 999999;
+}
+
+.select-trigger {
+	width: 100%;
+	border: 1px solid lightgray;
+	text-align: left;
+	padding: 7px;
+	font-size: 14px;
+	color: #212529;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+}
+
+.select-item {
+	display: flex;
+	align-items: center;
+	padding: 0 7px;
+	cursor: pointer;
+	font-size: 14px;
+  
+	&:hover {
+		background-color: whitesmoke;
+	}
+  
+	&.active {
+		background-color: deeppink;
+		color: #fff;
+	}
+}
+
+.no-results-item {
+	display: flex;
+	align-items: center;
+	padding: 0 7px;
+	font-size: 14px;
+}
+
+.select-menu-inner {
+	width: 100%;
 }
 
 html[dir="rtl"]{

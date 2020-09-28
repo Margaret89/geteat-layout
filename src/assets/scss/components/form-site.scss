@@ -1,4 +1,8 @@
 /*-------------- form-site -----------------*/
+input {
+	-webkit-appearance: none!important;
+}
+
 .form-site{
 	&__input{
 		position: relative;
@@ -7,6 +11,7 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="date"],
+	input[type=tel],
 	textarea{
 		height: 3rem;
 		width: 100%;
@@ -25,8 +30,10 @@
 	input[type="text"]:focus,
 	input[type="email"]:focus,
 	input[type="date"]:focus,
+	input[type=tel]:focus,
 	textarea:focus{
 		box-shadow: none;
+		border-color: $color-orange;
 	}
 
 	textarea{
@@ -39,15 +46,9 @@
 	input[type="text"]::placeholder,
 	input[type="email"]::placeholder,
 	input[type="date"]::placeholder,
+	input[type=tel]::placeholder,
 	textarea::placeholder{
 		color: #9B9B9B;
-	}
-
-	input[type="text"]:focus,
-	input[type="email"]:focus,
-	input[type="date"]:focus,
-	textarea:focus{
-		border-color: $color-orange;
 	}
 
 	&__content{
@@ -60,7 +61,7 @@
 	}
 
 	&__field{
-		margin-bottom: 17px;
+		margin-bottom: 16px;
 	}
 
 	&__label{
@@ -169,6 +170,18 @@
 		}
 	}
 
+  .no-streets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    .input-check {
+      display: flex;
+    }
+  }
+  .no-streets-label {
+    margin: 0 7px;
+  }
+
 	.input-date{
 		position: relative;
 
@@ -260,6 +273,18 @@
 	}
 }
 
+input[type="tel"].payment-sum__field,
+input[type="text"].payment-sum__field{
+	display: inline-block;
+	height: 3rem;
+	width: 198px;
+	border-radius: 1.5rem;
+	@include font(normal, 500, 1.5rem, 3rem, $color-red);
+	text-align: center;
+	padding: 0 20px;
+	background: #faf9f9;
+}
+
 .payment-sum{
 	&__title{
 		@include font(normal, 500, 0.75rem, 1.2, #4a4a4a);
@@ -268,15 +293,14 @@
 		margin-bottom: 5px;
 	}
 
-	&__field{
-		display: inline-block;
-		height: 3rem;
-		width: 198px;
-		border-radius: 1.5rem;
-		@include font(normal, 500, 1.5rem, 3rem, $color-red);
-		text-align: center;
-		padding: 0 20px;
-		background: #faf9f9;
+
+
+	&__currency {
+		font-size: 1.5rem;
+		color: $color-red;
+		position: absolute;
+		top: 10px;
+		right: calc(50% - 50px);
 	}
 }
 
@@ -301,7 +325,7 @@
 	}
 
 	&__price{
-		@include font(normal, normal, 1.5rem, 1.2, #858585);
+		@include font(normal, normal, 1.5rem, 1.2, #4a4a4a);
 	}
 
 	&__total{
@@ -341,7 +365,6 @@
 	&__item{display: none;}
 	&__item.active{display: block;}
 
-	.form-site{min-height: 403px;}
 	.form-site__content{width: 100%;}
 }
 
@@ -361,6 +384,31 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.payment-iframe-container {
+	position: relative;
+	overflow: hidden;
+	height: 600px;
+	margin: 0 1rem;
+}
+
+.payment-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.thanks {
+	font-size: 2rem;
+	font-weight: 500;
+	color: $color-red;
+	text-align: center;
+	padding-bottom: 1rem;
 }
 
 html[dir="rtl"]{
@@ -384,7 +432,7 @@ html[dir="rtl"]{
 				padding-right: 0;
 				padding-left: 30px;
 			}
-	
+
 			.ic-calendar{
 				right: 0;
 				left: 20px;
@@ -396,6 +444,13 @@ html[dir="rtl"]{
 		&__title{
 			margin-right: 0;
 			margin-left: 10px;
+		}
+	}
+
+	.payment-sum{
+		&__currency {
+			right: auto;
+			left: calc(50% - 50px);
 		}
 	}
 }
@@ -512,7 +567,8 @@ html[dir="rtl"]{
 	}
 
 	.form-branch{
-		height: 485px;
+		// height: 485px;
+		height: unset;
 
 		.select__option{max-height: 280px;}
 	}

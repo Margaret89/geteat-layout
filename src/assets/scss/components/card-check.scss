@@ -56,14 +56,18 @@
 		height: 80px;
 	}
 
-	&__img img{max-height: 100%;}
+	&__img img{
+		max-height: 100%;
+		max-width: 100px;
+	}
+
 	&__img-active{display: none;}
 
 	&__text{
 		@include font(normal, 500, 1.125rem, 1.2, $color-grey);
 		margin-top: 20px;
 	}
-	
+
 	input[type=radio]:checked + &__label{background: #fbe6ed;}
 	input[type=radio]:checked + &__label &__mark{opacity: 1;}
 	input[type=radio]:checked + &__label &__text{color: $color-red;}
@@ -102,6 +106,8 @@ html[dir="rtl"]{
 		margin-right: -9px;
 
 		.card-check{
+			// background: white;
+    		// border-radius: 12px;
 			margin-left: 9px;
 			margin-right: 9px;
 			margin-bottom: 18px;
@@ -113,6 +119,7 @@ html[dir="rtl"]{
 		max-width: calc(50% - 18px);
 
 		&__img{height: 48px;}
+		&__img img {max-width: 60px;}
 
 		&__text{
 			font-size: 1.25rem;

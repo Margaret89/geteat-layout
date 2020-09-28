@@ -1,0 +1,150 @@
+//// /*-------------- themes -----------------*/\
+//
+//// colors
+//.brand-primary-bg{background: $brand-color-primary;}
+//.brand-primary-text{color: $brand-color-primary;}
+//.brand-primary-fill{fill: $brand-color-primary;}
+//.brand-primary-stoke{stroke: $color-primary;}
+//
+//.brand-secondary-bg{background: $brand-color-secondary;}
+//.brand-secondary-text{color: $brand-color-secondary;}
+//.brand-secondary-fill{fill: $brand-color-secondary;}
+//
+//.brand-danger-bg{background: $brand-color-danger;}
+//.brand-danger-text{color: $brand-color-danger;}
+//.brand-danger-fill{fill: $brand-color-danger;}
+//
+//.brand-success-bg{background: $brand-color-success;}
+//.brand-success-text{color: $brand-color-success;}
+//.brand-success-fill{fill: $brand-color-success;}
+//
+//// texts
+//.brand-title{color: $brand-color-titles;}
+//.brand-text{color: $brand-color-texts;}
+//
+////buttons
+//.brand-btn{background: $brand-buttons-bg;}
+//.brand-btn-border{border-color: $brand-color-secondary;}
+//.brand-btn-text{color: $brand-buttons-texts;}
+//.brand-r-btn{border-radius: $brand-buttons-radius!important;}
+//
+////input
+//.brand-input-bg{background: $brand-inputs-bg;}
+//.brand-r-inputs{border-radius: $brand-inputs-radius!important;}
+//
+////burger
+//.brand-mob-burger{background: $brand-color-burger;}
+//.brand-header{background: $brand-color-header;}
+//
+////radius
+//.brand-r-cards{border-radius: $brand-cards-radius!important;}
+//.brand-r-cards-left{border-radius: $brand-cards-radius 0 0 $brand-cards-radius!important;}
+//.brand-r-cards-right{border-radius: 0 $brand-cards-radius $brand-cards-radius 0!important;}
+//
+//html[dir="rtl"]{
+//	.brand-r-cards-left{border-radius: 0 $brand-cards-radius $brand-cards-radius 0!important;}
+//	.brand-r-cards-right{border-radius: $brand-cards-radius 0 0 $brand-cards-radius!important;}
+//}
+//
+////hover, active, checked, focus
+//.card-check__mark.icon{fill: $brand-color-primary;}
+//.card-check input[type=radio]:checked + .card-check__label .card-check__text{color: $brand-color-primary;}
+//.catalog-menu__link:hover .catalog-menu__text,
+//.catalog-menu__item.active .catalog-menu__text{
+//	color: $brand-color-primary;
+//}
+//@media (max-width: 767px) {
+//	.catalog-menu__item.active .catalog-menu__text,
+//	.catalog-menu__item:hover .catalog-menu__text {
+//		color: $brand-color-primary;
+//	}
+//}
+//.ribbon3:after{border-color: $brand-color-primary;}
+//.cat-history__link:hover{color: $brand-color-primary;}
+//.cat-history__link:hover .icon{fill: $brand-color-primary;}
+//.input-check input[type=checkbox]:checked + .input-check__label .input-check__mark{border-color: $brand-color-primary;}
+//.input-check_circle input[type=checkbox]:checked + .input-check__label .input-check__text{color: $brand-color-primary;}
+//.product-choose input[type=radio]:checked + .product-choose__label .product-choose__mark,
+//.product-choose input[type=checkbox]:checked + .product-choose__label .product-choose__mark{
+//	border-color: $brand-color-primary;
+//}
+//.product-choose input[type=radio]:checked + .product-choose__label .product-choose__title{color: $brand-color-primary;}
+//.select .select__param.active,
+//.select__param:hover{
+//	color: $brand-color-primary;
+//}
+//.select .select__param.active .select__title,
+//.select .select__param.active .select__text,
+//.select__param:hover .select__title,
+//.select__param:hover .select__text{
+//	color: $brand-color-primary;
+//}
+//.btn_border:hover,
+//input[type="submit"].btn_border:hover,
+//button.btn_border:hover{
+//	border-color: $brand-color-primary;
+//	background: $brand-color-primary;
+//}
+//.btn_border-white:hover,
+//input[type="submit"].btn_border-white:hover,
+//button.btn_border-white:hover{
+//	color: $brand-color-primary;
+//}
+//.cat-filter__more-icon:hover{background: $brand-color-secondary;}
+//.cat-filter__item:hover,
+//.cat-filter__item.active{
+//	background: $brand-color-secondary;
+//}
+//.view__item:hover,
+//.view__item.active{
+//	background: $brand-color-secondary;
+//}
+//.catalog-list__name a:hover{color: $brand-color-secondary;}
+//.dot-menu__item:hover, .dot-menu__item:hover a{color: $brand-color-secondary;}
+//.cat-order-list__name a:hover{color: $brand-color-secondary;}
+//.cat-coupon input[type="text"]:focus{border-color: $brand-color-secondary;}
+//.cat-coupon__btn:hover{color: $brand-color-secondary;}
+//.counter__input:focus{border-color: $brand-color-secondary;}
+//.credit-card input[type="text"]:focus,
+//.credit-card input[type="email"]:focus,
+//.credit-card input[type="date"]:focus{
+//	border-color: $brand-color-secondary;
+//}
+//.dropdown__item:hover, .dropdown__item:hover a{color: $brand-color-secondary;}
+//.filter__item.active,
+//.filter__item:hover{
+//	background: $brand-color-secondary;
+//}
+//.form-site input[type="text"]:focus,
+//.form-site input[type="email"]:focus,
+//.form-site input[type="date"]:focus,
+//.form-site input[type=tel]:focus,
+//.form-site textarea:focus{
+//	border-color: $brand-color-secondary;
+//}
+//.history-product__name a:hover{color: $brand-color-secondary;}
+//.pay-choose-form__field input[type="text"]:focus,
+//.pay-choose-form__field input[type="email"]:focus,
+//.pay-choose-form__field input[type="date"]:focus,
+//.pay-choose-form__field textarea:focus{
+//	border-color: $brand-color-secondary;
+//}
+//.pay-form__name a:hover{color: $brand-color-secondary;}
+//.product-comment input[type="text"]:focus,
+//.product-comment input[type="email"]:focus,
+//.product-comment input[type="date"]:focus,
+//.product-comment textarea:focus{
+//	border-color: $brand-color-secondary;
+//}
+//.sms-form input[type="text"]:focus,
+//.sms-form input[type=tel]:focus{
+//	border-color: $brand-color-secondary;
+//}
+//.btn_orange,
+//input[type="submit"].btn_orange,
+//button.btn_orange{
+//	background: $brand-color-secondary;
+//}
+//@media (max-width: 767px){
+//	.search-form-order input:focus {border-color: $brand-color-secondary;}
+//}

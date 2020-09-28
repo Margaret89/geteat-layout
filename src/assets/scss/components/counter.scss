@@ -1,6 +1,7 @@
 /*-------------- counter -----------------*/
 .counter{
 	display: inline-flex;
+	align-items: center;
 
 	&__min,
 	&__max{
@@ -14,6 +15,7 @@
 		cursor: pointer;
 		position: relative;
 		transition: all 0.3s ease 0s;
+		touch-action: manipulation;
 	}
 
 	&__min{background: #f7dbe4;}
@@ -71,6 +73,11 @@
 
 @media (max-width: 767px) {
 	.counter{
+		&__min,
+		&__max{
+			margin: 0 3px;
+		}
+
 		&_big &__min,
 		&_big &__max,
 		&_big input[type="text"].counter__input{

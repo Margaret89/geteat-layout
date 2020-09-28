@@ -6,7 +6,7 @@
 	position: relative;
 
 	&__head{
-		@include font(normal, normal, 1rem, 1.2, $color-grey);
+		@include font(normal, normal, 1rem, 1.2, #4a4a4a);
 		position: relative;
 		padding-right: 14px;
 	}
@@ -28,6 +28,7 @@
 	&__list{
 		display: none;
 		width: 100%;
+		min-width: 250px;
 		background: #fcfcfc;
 		border-radius: 12px;
 		padding: 6px 24px;
@@ -35,6 +36,7 @@
 		top: 100%;
 		left: 0;
 		z-index: 3;
+		box-shadow: 0 8px 16px hsla(0,0%,54.1%,.25);
 	}
 
 	&__item,
@@ -81,11 +83,18 @@ html[dir="rtl"]{
 			margin-right: 0;
 			margin-left: 20px;
 		}
+
+		&__list{
+			right: 0;
+			left: auto;
+		}
 	}
 }
 
 @media (max-width: 767px) {
 	.dropdown{
+		display: inline-flex;
+		align-items: center;
 		padding: 0;
 
 		&__head{display: inline-block;}

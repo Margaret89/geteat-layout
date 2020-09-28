@@ -27,15 +27,22 @@
 	}
 
 	&__phone{
+		display: flex;
+		place-content: flex-end;
 		@include font(normal, normal, 1rem, 1.2, $color-grey);
 		text-decoration: none;
 		position: relative;
 
 		.icon{
-			stroke: $color-red;
+			fill: $color-red;
 			vertical-align: middle;
 			margin-right: 8px;
 		}
+	}
+
+	&__phone-number{
+		direction: ltr;
+		color: #4a4a4a;
 	}
 }
 
@@ -47,7 +54,7 @@
 	padding: 0 20px;
 
 	&__title{
-		@include font(normal, normal, 1rem, 1.2, $color-grey);
+		@include font(normal, normal, 1rem, 1.2, #4a4a4a);
 	}
 
 	&__list{
@@ -124,3 +131,40 @@ html[dir="rtl"]{
 // 		&__contact{width: 100%;}
 // 	}
 // }
+
+@media (min-width: 768px) {
+	.panel-delevery{
+		&__title {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.top-panel{
+		&__time .dropdown{
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+
+	.desktop-toolbar-icon {
+		margin-right: 10px;
+	}
+
+	html[dir="rtl"]{
+		.desktop-toolbar-icon {
+			margin-right: 0;
+			margin-left: 10px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.toolbar {
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+		align-items: center;
+		padding: 10px;
+	  }
+}
