@@ -60,12 +60,54 @@
 			&__close .icon{fill: $color-red;}
 		}
 	}
+}
 
-	html[dir="rtl"]{
+html[dir="rtl"]{
+	.wrapper-pizza{
 		.popup-product{
 			.product__price-old{
 				margin-right: 0;
 				margin-left: 12px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.wrapper-pizza{
+		.product{
+			display: block;
+			padding-top: 10px;
+
+			&__content{
+				padding: 20px 20px 160px;
+			}
+
+			&__img{
+				display: block;
+				width: 180px;
+				height: 180px;
+				margin-top: -34px;
+			}
+
+			&__close{
+				top: 20px;
+				right: 20px;
+			}
+
+			&__main{margin-bottom: 15px;}
+		}
+
+		.popup-product .product{height: auto;}
+	}
+
+	html[dir="rtl"]{
+		.wrapper-pizza{
+			.product{
+				&__close{
+					right: auto;
+					left: 20px;
+				}
 			}
 		}
 	}
