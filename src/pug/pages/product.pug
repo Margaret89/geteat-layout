@@ -520,162 +520,136 @@ block modal
 
 		button.btn(type='submit') Add $ 11,98
 
-	.popup-wrap.popup-wrap_mob-bot(style="width: 800px;")
-		.popup
-			.product
-				.product__close.d-none.d-md-inline-block
-					+svg('ic-close-thin','ic-close-thin', '26', '26')
+	.popup-product
+		.popup-wrap.popup-wrap_mob-bot(style="width: 817px;")
+			.popup
+				.product
+					.product__close.d-none.d-md-inline-block
+						+svg('ic-close-grad','ic-close-grad', '32', '32')
 
-				.product__img(style='background-image: url(/assets/img/detail-product.jpg);')
-				.product__content
-					.product__main
-						.product__info
-							.product__head Healthy salad
-							.product__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
-						.product__price
-							.product__price-cur $ 5,99
-							.product__price-old $ 7,99
-					form
-						.product-form
-							.product-form__head Complete your meal
-							.product-form__text Optional. Here are some popular add-ons
-						.product-choose-wrap
-							.product-choose
-								input#japan(name='prodchoose', type='radio', checked='checked')
-								label.product-choose__label(for='japan')
-									.product-choose__star
-										+svg('ic-star','ic-star', '12', '12')
+					.product__img(style='background-image: url(/assets/img/product-pizza.png);')
 
-									.product-choose__mark
-										+svg('ic-check','ic-check', '12', '9')
+					.product__content
+						.product__main
+							.product__info
+								.product__head Vegetarian pizza
 
-									.product-choose__info
-										.product-choose__title Japanese soda drink
-										.product-choose__text + $3.00
-							.product-choose
-								input#snapple(name='prodchoose', type='radio', checked='checked')
-								label.product-choose__label(for='snapple')
-									.product-choose__star
-										+svg('ic-star','ic-star', '12', '12')
+								.product__price
+									.product__price-old $ 7,99
+									.product__price-cur $ 5,99
 
-									.product-choose__mark
-										+svg('ic-check','ic-check', '12', '9')
+								.product__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
 
-									.product-choose__info
-										.product-choose__title Snapple
-										.product-choose__text + $3.00
-							.product-choose
-								input#soda(name='prodchoose', type='radio', checked='checked')
-								label.product-choose__label(for='soda')
-									.product-choose__star
-										+svg('ic-star','ic-star', '12', '12')
+							.product-param
+								-
+									var list=[
+										{size:'S', text:'25 cm'},
+										{size:'M', text:'35 cm', status:'active'},
+										{size:'L', text:'45 cm'},
+									]
 
-									.product-choose__mark
-										+svg('ic-check','ic-check', '12', '9')
+								each item in list
+									.product-param__item(class=item.status?'active':'')
+										.product-param__icon= item.size
+										.product-param__text= item.text
 
-									.product-choose__info
-										.product-choose__title Soda
-										.product-choose__text + $2.00
+							
+						form
+							.product-form-group
+								.product-form-group__head Choose a toppings
+								.product-form-group__text Maximum 3 allowed, + 1$ for each extra
 
-						.product-form-field
-							.product-form-field__top
-								.product-form-field__info
-									.product-form-field__title Choose a flavor
-									.product-form-field__text Choose 1 option
-								.product-form-field__status Required
-							.product-form-field__content
-								.product-form-field__check
-									.input-check.input-check_circle
-										input#prod-check1(type='checkbox')
-										label.input-check__label(for='prod-check1')
-											span.input-check__mark
-												+svg('ic-check','ic-check', '12', '9')
-											span.input-check__text Coke
+								.prod-choose-img
+									-
+										var list=[
+											{img:'chili.svg'},
+											{img:'cucumber.svg'},
+											{img:'mushroom.svg', status:'active'},
+											{img:'onion.svg'},
+											{img:'pineapple.svg', status:'active', icon:'piece-pizza.svg'},
+											{img:'olive.svg'},
+											{img:'onion.svg'},
+										]
+									each item,index in list
+										.prod-choose-img__item
+											if(item.status=='active')
+												input(type="checkbox", id="prod-choose"+index, checked="checked")
+											else
+												input(type="checkbox", id="prod-choose"+index)
 
-									.input-check.input-check_circle
-										input#prod-check2(type='checkbox')
-										label.input-check__label(for='prod-check2')
-											span.input-check__mark
-												+svg('ic-check','ic-check', '12', '9')
-											span.input-check__text Diet Coke
+											label.prod-choose-img__content(for="prod-choose"+index)
+												img(src="/assets/img/"+item.img, alt="")
 
-									.input-check.input-check_circle
-										input#prod-check3(type='checkbox')
-										label.input-check__label(for='prod-check3')
-											span.input-check__mark
-												+svg('ic-check','ic-check', '12', '9')
-											span.input-check__text Sprite
+												if(item.icon)
+													.prod-choose-img__icon
+														img(src="/assets/img/"+item.icon, alt="")
 
-									.input-check.input-check_circle
-										input#prod-check4(type='checkbox')
-										label.input-check__label(for='prod-check4')
-											span.input-check__mark
-												+svg('ic-check','ic-check', '12', '9')
-											span.input-check__text Root Beer
+							.product-form-group
+								.product-form-group__head Complete your order
+								.product-form-group__text Optional. Here are some popular add-ons
 
-									.input-check.input-check_circle
-										input#prod-check5(type='checkbox', checked='checked')
-										label.input-check__label(for='prod-check5')
-											span.input-check__mark
-												+svg('ic-check','ic-check', '12', '9')
-											span.input-check__text Orange Soda
+								.prod-choose-add
+									-
+										var list=[
+											{img:'jap-soda.png', title:'Japanese soda', price:'+ $3,00'},
+											{img:'snapple.png', title:'Snapple', price:'+ $2,00'},
+											{img:'soda.png', title:'Soda', price:'+ $2,00', status:'active'},
+											
+										]
+									each item,index in list
+										.prod-choose-add__item
+											if(item.status=='active')
+												input(type="checkbox", id="prod-add"+index, checked="checked")
+											else
+												input(type="checkbox", id="prod-add"+index)
 
-						.product-form-field
-							.product-form-field__top
-								.product-form-field__info
-									.product-form-field__title Choose a flavor
-									.product-form-field__text Maximum 5 allowed, + 1$ for each extra
-								.product-form-field__status Required
+											label.prod-choose-add__content(for="prod-choose"+index)
+												.prod-choose-add__icon
+													img(src="/assets/img/"+item.img, alt="")
 
-							.product-form-field__content
-								.product-form-count-wrap
-									.product-form-count
-										.product-form-count__text Spicy
-										.counter
-											.counter__min
-												+svg('ic-minus','ic-minus', '10', '2')
+												.prod-choose-add__info
+													.prod-choose-add__title= item.title
+													.prod-choose-add__price= item.price
 
-											input.counter__input(type='text', value='2')
+							.product-form-group
+								.product-form-group__subtitle Choose a flavor (1 option)
 
-											.counter__max
-												+svg('ic-plus','ic-plus', '10', '10')
+								.prod-choose-add.prod-choose-add_small
+									-
+										var list=[
+											{img:'coke.png', title:'Coke'},
+											{img:'diet-coke.png', title:'Diet Coke', status:'active'},
+											{img:'sprite.png', title:'Sprite'},
+											{img:'bear.png', title:'Root bear'},
+										]
+									each item,index in list
+										.prod-choose-add__item
+											if(item.status=='active')
+												input(type="checkbox", id="prod-add"+index, checked="checked")
+											else
+												input(type="checkbox", id="prod-add"+index)
 
-									.product-form-count
-										.product-form-count__text Spicy
-										.counter
-											.counter__min
-												+svg('ic-minus','ic-minus', '10', '2')
+											label.prod-choose-add__content(for="prod-choose"+index)
+												.prod-choose-add__icon
+													img(src="/assets/img/"+item.img, alt="")
 
-											input.counter__input(type='text', value='2')
+												.prod-choose-add__info
+													.prod-choose-add__title= item.title
 
-											.counter__max
-												+svg('ic-plus','ic-plus', '10', '10')
 
-									.product-form-count
-										.product-form-count__text Spicy
-										.counter
-											.counter__min
-												+svg('ic-minus','ic-minus', '10', '2')
+							.product-comment
+								.product-comment__top
+									.product-comment__title Comments
+								textarea(placeholder='Dressing on the side? No pickles? Let us know here')
 
-											input.counter__input(type='text', value='2')
+							.product-form-bottom.d-none.d-md-flex
+								.counter.counter_big
+									.counter__min
+										+svg('ic-minus','ic-minus', '20', '3')
 
-											.counter__max
-												+svg('ic-plus','ic-plus', '10', '10')
+									input.counter__input(type='text', value='2')
 
-						.product-comment
-							.product-comment__top
-								.product-comment__title Comments
-								input(type='text', placeholder='Diners’ name')
-							textarea(placeholder='Dressing on the side? No pickles? Let us know here')
+									.counter__max
+										+svg('ic-plus','ic-plus', '20', '20')
 
-						.product-form-bottom.d-none.d-md-flex
-							.counter.counter_big
-								.counter__min
-									+svg('ic-minus','ic-minus', '20', '3')
-
-								input.counter__input(type='text', value='2')
-
-								.counter__max
-									+svg('ic-plus','ic-plus', '20', '20')
-
-							button.btn(type='submit') Add $ 11,98
+								button.btn(type='submit') Add $ 11,98

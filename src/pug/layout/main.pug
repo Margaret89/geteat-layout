@@ -8,8 +8,8 @@ html(lang='ru')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		title #{title}
 
-	body
-		.wrapper.wrapper-pizza(class=shadow?'blur':'')
+	body.wrapper-pizza
+		.wrapper(class=shadow?'blur':'')
 			if(header)
 				+header(header)
 				
