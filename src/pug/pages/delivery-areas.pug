@@ -448,20 +448,13 @@ block content
 					a.btn(href='#') Your order: $86
 					
 block modal
-	.popup-wrap
+	.popup-wrap.popup-wrap_mob-bot
 		.popup
-			.popup__close.d-none.d-md-inline-block
+			.popup__close
 				+svg('ic-close-grad','ic-close-grad', '32', '32')
 
-			.popup__top
-				img.popup__bg-top.d-md-none(src='/assets/img/bg-mobile-head.svg', alt='')
-
-				.popup__back.d-md-none
-					+svg('ic-arrow-left','ic-arrow-left', '16', '12')
-					|back
-
-				.popup__head
-					.h1 Delivery areas
+			.popup__head
+				.h1 Delivery areas
 
 			.popup__content
 				.data-delivery-wrap

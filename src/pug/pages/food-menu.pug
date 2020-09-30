@@ -26,7 +26,7 @@ block content
 											+svg('ic-close','ic-close', '10', '10')
 
 								.cat-category-wrap
-									.cat-category-wrap__content
+									.cat-category-wrap__content.brand-r-cards
 										section.cat-category-action
 											.working-time
 												img.working-time__bg(src='/assets/img/wt-wave-white.png')
@@ -260,70 +260,89 @@ block content
 				.header__logo
 					img(src='/assets/img/logo.svg', alt='')
 				a.header__link(href='#') Example
-			.new-order(*ngif='mobile')
+			.new-order.d-md-none
 				section.new-order-top
-					.new-order-top__content
-						.search-form-order-wrap
-							.search-form-order-wrap__btn
-								+svg('ic-search','ic-search ic-stroke', '16', '16')
-								
-							.search-form-order-wrap__popup.active
-								form.search-form-order
-									input(type='text', placeholder='Search')
+					.toolbar
+						.new-order-top__content
+							.search-form-order-wrap
+								.search-form-order-wrap__btn
+									+svg('ic-search','ic-search ic-stroke', '16', '16')
+									
+								.search-form-order-wrap__popup.active
+									form.search-form-order
+										input(type='text', placeholder='Search')
 
-									.search-form-order__close
-										+svg('ic-close-circle','ic-close-circle', '20', '20')
+										.search-form-order__close
+											+svg('ic-close-circle','ic-close-circle', '20', '20')
 
-									button(type='submit')
-										+svg('ic-search','ic-search ic-stroke', '13', '13')
+										button(type='submit')
+											+svg('ic-search','ic-search ic-stroke', '13', '13')
 
-								.cat-filter
-									-
-										var list=[
-											{icon:'broccoli.svg', text:'Vegeterian', status:'active'},
-											{icon:'avocado.svg', text:'Vegan', status:'active'},
-											{icon:'gluten.svg', text:'More'},
-											{icon:'avocado.svg', text:'Vegan'},
-											{icon:'gluten.svg', text:'Ipsum', status:'active'},
-											{icon:'avocado.svg', text:'Lorem'},
-											{icon:'broccoli.svg', text:'Vegeterian'},
-											{icon:'gluten.svg', text:'More'},
-										]
-									.cat-filter__content
-										each item in list
-											.cat-filter__item(class=item.status?'active':'')
-												.cat-filter__link
-													.cat-filter__icon
-														img(src='/assets/img/'+item.icon, alt='')
-													.cat-filter__text= item.text
-						.page-mob-profile.active
-							.page-mob-profile__content
-								.page-mob-profile__photo
-									.page-mob-profile__photo-icon
-										+svg('ic-crown','ic-crown ic-white', '12', '12')
-								.page-mob-profile__info
-									.page-mob-profile__head Hello Linda
-									.page-mob-profile__text 1356 Customers club points
-								.dot-menu
-									.dot-menu__icon
-										span
-									.dot-menu__list
-										.dot-menu__item
-											a(href='#') My profile
-										.dot-menu__item
-											a(href='#') Log out
-					.view
-						.view__item.view__item_line.active
-							+svg('ic-view-line','ic-view-line', '20', '14')
+									.cat-filter
+										-
+											var list=[
+												{icon:'broccoli.svg', text:'Vegeterian', status:'active'},
+												{icon:'avocado.svg', text:'Vegan', status:'active'},
+												{icon:'gluten.svg', text:'More'},
+												{icon:'avocado.svg', text:'Vegan'},
+												{icon:'gluten.svg', text:'Ipsum', status:'active'},
+												{icon:'avocado.svg', text:'Lorem'},
+												{icon:'broccoli.svg', text:'Vegeterian'},
+												{icon:'gluten.svg', text:'More'},
+											]
+										.cat-filter__content
+											each item in list
+												.cat-filter__item(class=item.status?'active':'')
+													.cat-filter__link
+														.cat-filter__icon
+															img(src='/assets/img/'+item.icon, alt='')
+														.cat-filter__text= item.text
+							.page-mob-profile.active
+								.page-mob-profile__content
+									.page-mob-profile__photo
+										.page-mob-profile__photo-icon
+											+svg('ic-crown','ic-crown ic-white', '12', '12')
+									.page-mob-profile__info
+										.page-mob-profile__head Hello Linda
+										.page-mob-profile__text 1356 Customers club points
+									.dot-menu
+										.dot-menu__icon
+											span
+										.dot-menu__list
+											.dot-menu__item
+												a(href='#') My profile
+											.dot-menu__item
+												a(href='#') Log out
+						.view
+							.view__item.view__item_line.active
+								+svg('ic-view-line','ic-view-line', '20', '14')
 
-						.view__item.view__item_tile
-							+svg('ic-view-tile','ic-view-tile', '14', '14')
+							.view__item.view__item_tile
+								+svg('ic-view-tile','ic-view-tile', '14', '14')
+					
 				
-				
-				include ../components/catalog-menu
+					include ../components/catalog-menu
 
+				
+				.working-time
+					img.working-time__bg(src='/assets/img/wt-wave-white.png')
+
+					.countdown
+						.countdown__label.brand-text Closes in:
+
+						.countdown__content
+							.countdown__sect
+								.countdown__item 0
+								.countdown__item 0
+							.countdown__sect
+								.countdown__item 2
+								.countdown__item 3
+							.countdown__sect
+								.countdown__item 0
+								.countdown__item 3
 				//- section.catalog-list.catalog-list_tile
 				section.catalog-list
+
 					.catalog-list__item
 						a.catalog-list__img(href='#', style="background-image: url('/assets/img/pizza1.png');")
 							.catalog-list__new

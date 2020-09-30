@@ -99,6 +99,12 @@ html[dir="rtl"]{
 		}
 
 		.popup-product .product{height: auto;}
+
+		.popup-wrap_mob-bot .popup__close{
+			position: absolute;
+			top: 32px;
+			right: 17px;
+		}
 	}
 
 	html[dir="rtl"]{
