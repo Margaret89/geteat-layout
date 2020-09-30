@@ -448,20 +448,13 @@ block content
 					a.btn(href='#') Your order: $86
 					
 block modal
-	.popup-wrap(style="width: 800px;")
+	.popup-wrap.popup-wrap_mob-bot(style="width: 800px;")
 		.popup
-			.popup__close.d-none.d-md-inline-block
+			.popup__close
 				+svg('ic-close-grad','ic-close-grad', '32', '32')
 
-			.popup__top.popup__top_min
-				img.popup__bg-top.d-md-none(src='/assets/img/bg-mobile-head.svg', alt='')
-
-				.popup__back.d-md-none
-					+svg('ic-arrow-left','ic-arrow-left', '16', '12')
-					|back
-
-				.popup__head.d-none.d-md-block
-					.h1 Add mushroom to the whole pizza?
+			.popup__head
+				.h1 Add mushroom to the whole pizza?
 
 			.popup__content
 				.how-much-form
@@ -488,7 +481,7 @@ block modal
 													.piece-check__part
 														img(src="/assets/img/sector-top-left.svg", alt="")
 
-											.card-check__text Quarter
+											.piece-check__text Quarter
 
 									.piece-check
 										input#pizza-half(type='radio', name="pizza")
@@ -509,7 +502,7 @@ block modal
 													.piece-check__part
 														img(src="/assets/img/sector-top-left.svg", alt="")
 
-											.card-check__text Half
+											.piece-check__text Half
 
 									.piece-check
 										input#pizza-whole(type='radio', name="pizza")
@@ -530,11 +523,11 @@ block modal
 													.piece-check__part.active
 														img(src="/assets/img/sector-top-left.svg", alt="")
 
-											.card-check__text Whole
+											.piece-check__text Whole
 
 
 								.form-site__btn.form-site__btn_sb
-									a(href="#").btn.btn_border-grad.d-none.d-md-inline-block
+									a(href="#").btn.btn_border-grad
 										span.btn__grad-content
 											span Remove
 

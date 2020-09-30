@@ -166,4 +166,37 @@ html[dir="rtl"]{
 			padding: 20px 15px 12px;
 		}
 	}
+
+	.piece-check-list{
+		width: calc(100% + 8px);
+		margin-left: -4px;
+		margin-right: -4px;
+
+		.piece-check{
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+	}
+
+	.piece-check{
+		width: calc(33.33% - 8px);
+
+		&__label{
+			width: 100%;
+			min-height: 96px;
+			border-radius: 24px;
+			padding: 5px 5px 10px;
+		}
+
+		&__img{
+			width: 64px;
+			height: 64px;
+			margin-top: -25px;
+		}
+
+		&__text{
+			font-size: 1rem;
+			margin-top: 10px;
+		}
+	}
 }
