@@ -359,6 +359,24 @@
 		margin-top: 5px;
 	}
 
+	&__weight{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		.counter{
+			&__max,
+			&__min,
+			input[type="text"].counter__input{
+				width: 32px;
+				height: 32px;
+			}
+
+			input[type="text"].counter__input{font-size: 1.125rem;}
+		}
+	}
+
 	&__btn{
 		display: inline-flex;
 		align-items: center;
@@ -411,6 +429,18 @@
 		height: calc(100% - 88px);
 		width: 100%;
 		padding: 8px 12px;
+	}
+
+	&_tile &__weight{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.tab-filter{margin-bottom: 8px;}
+
+		.tab-filter__item{
+			padding: 0 20px;
+		}
 	}
 
 	&_tile &__price{display: none;}
@@ -1048,6 +1078,19 @@ html[dir="rtl"]{
 			font-size: 0.875rem;
 			line-height: 28px;
 		}
+		
+		&__weight{
+			.counter{
+				&__max,
+				&__min,
+				input[type="text"].counter__input{
+					width: 28px;
+					height: 28px;
+				}
+	
+				input[type="text"].counter__input{font-size: 1rem;}
+			}
+		}
 
 		&__btn .icon{
 			width: 10px;
@@ -1058,6 +1101,13 @@ html[dir="rtl"]{
 		&__name, &__name a{font-size: 1rem;}
 		&__price-def{font-size: 1rem;}
 		&_tile &__name, &_tile &__name a, &_tile &__price-def{font-size: 0.875rem;}
+
+		&_tile &__weight{
+			.tab-filter__item{
+				min-width: 40px;
+				padding: 0 10px;
+			}
+		}
 	}
 }
 
@@ -1105,6 +1155,12 @@ html[dir="rtl"]{
 
 		&__price-def{color: $color-red;}
 		&__text{margin-top: 8px;}
+
+		&__weight{
+			flex-wrap: wrap;
+
+			.counter{margin: 4px 0;}
+		}
 
 		&_tile &__item{
 			width: calc(50% - 14px);

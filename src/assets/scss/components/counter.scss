@@ -26,13 +26,16 @@
 	&__max:hover{background-color: #cfe9cb;}
 
 	& input[type="text"].counter__input{
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
 		height: 24px;
 		width: 24px;
 		outline: none;
 		border: 1px solid #ededed;
 		border-radius: 50%;
 		font-family: $font-site;
-		@include font(normal, normal, 14px, 25px, #4a4a4a);
+		@include font(normal, normal, 14px, 1, #4a4a4a);
 		text-align: center;
 		padding: 0 5px;
 		margin: 0 6px;

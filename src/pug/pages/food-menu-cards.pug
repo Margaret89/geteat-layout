@@ -93,7 +93,7 @@ block content
 												-
 													var list=[
 														{img:'steak-big.jpg', new:'true', name:'Steak with vegetables', cur_price:'$ 5,99', old_price:'$ 7,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
-														{img:'vegan-big.jpg', name:'Vegan joy', cur_price:'$ 7,59', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_broccoli:'true', ic_avocado:'true'},
+														{img:'cucumder-big.jpg', name:'Cucumber', cur_price:'$ 0,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', weight:'true'},
 														{img:'soup-big.jpg', name:'Red soup', cur_price:'$ 5,99', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ic_gluten:'true'},
 													];
 												each item in list
@@ -117,18 +117,33 @@ block content
 																	if(item.old_price)
 																		.catalog-list__price-old= item.old_price
 															.catalog-list__bottom
-																.catalog-list-icon
-																	.catalog-list-icon__item(class=item.ic_gluten?'catalog-list-icon__item_no-bg':'')
-																		if(item.ic_gluten)
-																			img(src='/assets/img/gluten.svg', alt='')
-																		if(item.ic_broccoli)
-																			img(src='/assets/img/broccoli.svg', alt='')
-																		if(item.ic_avocado)
-																			img(src='/assets/img/avocado.svg', alt='')
+																if(item.weight)
+																	.catalog-list__weight
+																		.tab-filter
+																			.tab-filter__item.active Units
+																			.tab-filter__item Kg
 
-																a.catalog-list__btn(href='#')
-																	+svg('ic-plus','ic-plus', '12', '12')
-																	span.catalog-list__btn-text Add
+																		.counter
+																			.counter__min
+																				+svg('ic-minus','ic-minus', '13', '2')
+
+																			input.counter__input(type='text', value='2')
+
+																			.counter__max
+																				+svg('ic-plus','ic-plus', '13', '13')
+																else
+																	.catalog-list-icon
+																		.catalog-list-icon__item(class=item.ic_gluten?'catalog-list-icon__item_no-bg':'')
+																			if(item.ic_gluten)
+																				img(src='/assets/img/gluten.svg', alt='')
+																			if(item.ic_broccoli)
+																				img(src='/assets/img/broccoli.svg', alt='')
+																			if(item.ic_avocado)
+																				img(src='/assets/img/avocado.svg', alt='')
+
+																	a.catalog-list__btn(href='#')
+																		+svg('ic-plus','ic-plus', '12', '12')
+																		span.catalog-list__btn-text Add
 
 												
 										
@@ -423,27 +438,34 @@ block content
 								a.catalog-list__btn(href='#')
 									+svg('ic-plus','ic-plus', '12', '12')
 									span.catalog-list__btn-text Add
+
 					.catalog-list__item
-						a.catalog-list__img(href='#', style="background-image: url('/assets/img/vegan-big.jpg');")
+						a.catalog-list__img(href='#', style="background-image: url('/assets/img/cucumber-big.jpg');")
 						.catalog-list__content
 							.catalog-list__info
 								.catalog-list__desc
 									.catalog-list__name
-										a(href='#') Vegan joy
+										a(href='#') Cucumber
 										.catalog-list__price-tile
-											.catalog-list__price-def $ 7,59
+											.catalog-list__price-def $ 0,99
 									.catalog-list__text Lorem ipsum dolor sit amet, consectetur adipiscing elit
 								.catalog-list__price
-									.catalog-list__price-def $ 7,59
+									.catalog-list__price-def $ 0,99
 							.catalog-list__bottom
-								.catalog-list-icon
-									.catalog-list-icon__item
-										img(src='/assets/img/broccoli.svg', alt='')
-									.catalog-list-icon__item
-										img(src='/assets/img/avocado.svg', alt='')
-								a.catalog-list__btn(href='#')
-									+svg('ic-plus','ic-plus', '12', '12')
-									span.catalog-list__btn-text Add
+								.catalog-list__weight
+									.tab-filter
+										.tab-filter__item.active Units
+										.tab-filter__item Kg
+
+									.counter
+										.counter__min
+											+svg('ic-minus','ic-minus', '13', '2')
+
+										input.counter__input(type='text', value='2')
+
+										.counter__max
+											+svg('ic-plus','ic-plus', '13', '13')
+
 					.catalog-list__item
 						a.catalog-list__img(href='#', style="background-image: url('/assets/img/soup-big.jpg');")
 						.catalog-list__content
